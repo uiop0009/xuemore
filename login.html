@@ -7,9 +7,171 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link rel="shortcut icon" href="/favicon.ico">
     
-    
+    <link href="static/bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="static/flat-ui-dist/css/flat-ui.min.css" rel="stylesheet">
+    <link href="static/css/common-setting.css" rel="stylesheet">
+    <link href="static/css/login.css" rel="stylesheet">
 </head>
 
 <body>
+	
+      <div class="login-frame">
+          <div class="login-icon">
+            <img src="img/login/icon.png" alt="Welcome to Mail App" />
+            <h4>Welcome to <small>Mail App</small></h4>
+          </div>
+
+          <div class="login-form">
+            <div class="form-group">
+              <input type="text" class="form-control login-field" value="" placeholder="Enter your name" id="login-name" />
+              <label class="login-field-icon fui-user" for="login-name"></label>
+            </div>
+
+            <div class="form-group">
+              <input type="password" class="form-control login-field" value="" placeholder="Password" id="login-pass" />
+              <label class="login-field-icon fui-lock" for="login-pass"></label>
+            </div>
+
+            <a class="btn btn-primary btn-lg btn-block" href="#">Log in</a>
+            <a class="login-link" href="#">Lost your password?</a>
+          </div>
+      </div>
+      
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <input type="hidden" id="loginRequireUserIdMessage" data-l10n-id="login.message.requireUserId.value"  value="请输入用户名" />
+    <input type="hidden" id="loginRequirePasswordMessage" data-l10n-id="login.message.requirePassword.value"  value="请输入密码" />
+    <input type="hidden" id="loginSuccessMessage" data-l10n-id="login.message.success.value"  value="登陆成功" />
+    
+    
+	<script type="text/javascript" src="static/js/promise.js"></script>
+	<script type="text/javascript" src="static/js/ajax.js"></script>
+	<script type="text/javascript" src="static/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="static/flat-ui-dist/js/flat-ui.min.js"></script>
+    <script type="text/javascript">
+            (function(){
+             if(!String.prototype.trim){
+                String.prototype.trim = function(){
+                    return this.replace(/^\s+|\s+$/g, "");
+                };
+             }
+             }());
+            (function(){
+            var userLogin = {
+                userIdId: "userId",
+                passwordId: "password",
+                messageId: "loginMessage",
+                mainButtonId: "loginButton",
+                authUrl:"/login",
+
+                _gather: function () {
+                    var userId = this._getFieldValue(this.userIdId);
+                    if(userId){
+                        userId = userId.trim();
+                    }
+                    var password = this._getFieldValue(this.passwordId);
+                    return {
+                        "userId": userId,
+                        "password": password
+                    };
+                },
+
+                _getFieldValue: function (fieldId) {
+                    var fieldElement = document.getElementById(fieldId);
+                    if (fieldElement) {
+                        return fieldElement.value;
+                    }
+                    return null;
+                },
+
+                _getText: function(textId){
+                    var textElement = document.getElementById(textId);
+                    if(textElement){
+                        return textElement.textContent || textElement.innerText || textElement.value;
+                    }
+                    return "";
+                },
+
+                _showMessage: function (msg) {
+                    var messageContainer = document.getElementById(this.messageId);
+                    if(messageContainer.textContent!==undefined){
+                        messageContainer.textContent = msg;
+                    }
+                    else{
+                        messageContainer.innerText = msg;
+                    }
+                },
+
+                validate: function () {
+                    var userInfo = this._gather();
+                    var validationMessage = "";
+                    if (!userInfo.userId) {
+                        validationMessage = this._getText("loginRequireUserIdMessage");
+                    }
+                    else if (!userInfo.password || userInfo.password.trim() === "") {
+                        validationMessage = this._getText("loginRequirePasswordMessage");
+                    }
+                    this._showMessage(validationMessage)
+                    return validationMessage === "";
+                },
+
+                login: function () {
+                    var self = this;
+                    var promise = new Promise();
+                    var userInfo = this._gather();
+                    ajax.jsonPost(this.authUrl, userInfo).then(
+                        function (userId) {
+                            self._showMessage(self._getText("loginSuccessMessage"));
+                            promise.fulfill(userId);
+                        },
+                        function (errorMessage) {
+                            self._showMessage(errorMessage.responseText);
+                            promise.reject(errorMessage);
+                        }
+                    );
+                    return promise;
+                }
+            };
+
+            var validateAndLogin = function(){
+                if(userLogin.validate()){
+                    userLogin.login().then(function(){
+                        window.location.href = "/user";
+                   });
+               }
+            };
+
+            var submitBtn = document.getElementById(userLogin.mainButtonId);
+            submitBtn.onclick = function(){
+                validateAndLogin();
+            };
+
+            var pressEnterKey = function(e){
+                var evt = e || window.event;
+                var keyCode = evt.which || evt.keyCode;
+                if(keyCode === 13){ // enter
+                    validateAndLogin();
+                }
+            };
+
+            var userIdInput = document.getElementById(userLogin.userIdId);
+            var passwordInput = document.getElementById(userLogin.passwordId);
+            userIdInput.onkeyup = pressEnterKey;
+            passwordInput.onkeyup = pressEnterKey;
+
+            }());
+
+    </script>
 </body>
 </html>
