@@ -4,3 +4,31 @@
 body {
 	background-color: #1abc9c;
 }
+
+#login-frame {
+	padding: 10% 25%;
+}
+
+
+
+#plane {
+	font-size: 95px;
+	color: #FFF;
+	margin-left: -2px;
+}
+
+#welcome {
+	font-size: 140%;
+	font-weight: 100;
+	color: #FFF;
+}
+#welcome small {
+	font-weight: bold;
+	font-size: 95%;
+	line-height: 50px;
+}
+
+.form-control {
+	font-family: "Microsoft Yahei","Helvetica Neue",Helvetica,Arial,sans-serif;
+	
+}
