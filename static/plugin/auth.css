@@ -1,0 +1,360 @@
+body {
+    margin: 0;
+    font-family: "Myriad Set Pro","Lucida Grande","Helvetica Neue","Helvetica","Arial","Verdana","sans-serif";
+    font-size: 16px
+}
+
+a {
+    cursor: pointer;
+    color: #00E;
+    text-decoration: none
+}
+
+a:visited {
+    text-decoration: none
+}
+
+.bold {
+    font-weight: 700
+}
+
+.colon:after {
+    content: ":"
+}
+
+.header {
+    height: 30px;
+    line-height: 30px;
+    margin: 5px 0
+}
+
+.headerLeft {
+    position: absolute
+}
+
+.headerRight {
+    float: right;
+    margin-right: 15px
+}
+
+.logo {
+    padding: 5px;
+    font-size: 26px;
+    color: yellowgreen;
+    font-weight: 700
+}
+
+.header .headerLink {
+    display: inline-block;
+    font-weight: 700;
+    line-height: 34px;
+    padding: 0 15px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+    margin: 5px 15px auto auto;
+    color: #FFF;
+    background: #8585EE
+}
+
+.header .userId {
+    font-size: initial;
+    margin: 0 5px
+}
+
+.header .logout {
+    margin: 0 5px
+}
+
+.welcome:after {
+    content: ", "
+}
+
+.nav {
+    background-color: #eee;
+    border-radius: 2px
+}
+
+.nav-content {
+    width: 700px;
+    margin: 0 auto
+}
+
+.nav-list {
+    margin: 0;
+    list-style: none;
+    position: relative;
+    text-align: justify
+}
+
+.nav-list .tab {
+    margin: 0;
+    list-style-type: none;
+    vertical-align: top;
+    display: inline-block;
+    border-radius: 1px
+}
+
+.nav-list li.tab:hover {
+    background-color: #f90;
+    color: #fff
+}
+
+.nav-list .tab-link {
+    padding: 5px 30px;
+    position: relative;
+    display: block;
+    opacity: 1;
+    transition: opacity .2s cubic-bezier(0.645,.045,.355,1)
+}
+
+.nav-list .tab-text {
+    color: #000;
+    overflow: hidden;
+    clip: rect(1px,1px,1px,1px)
+}
+
+.form {
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 50px
+}
+
+.form .messageArea {
+    display: block;
+    color: red
+}
+
+.form .buttonArea {
+    padding-left: 150px
+}
+
+.form .button {
+    min-width: 90px;
+    display: inline-block;
+    font-size: initial
+}
+
+.form .mainButton {
+    border-radius: 3px;
+    padding: 5px 25px;
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+    background: #2f8215;
+    border: 1px solid #a5bb7f;
+    text-shadow: 0 -1px 0 rgba(0,0,0,.8)
+}
+
+.form .linkButton {
+    padding: 2px;
+    text-align: center
+}
+
+.formInput {
+    margin-bottom: 5px;
+    padding: 3px;
+    border-radius: 3px;
+    border-style: solid;
+    border-color: #AAA;
+    border-width: 1px;
+    height: 30px;
+    width: 300px;
+    font-size: 20px
+}
+
+.formLabel {
+    width: 150px;
+    display: inline-block;
+    text-align: right;
+    font-size: 18px
+}
+
+.formLabel:after {
+    content: ":"
+}
+
+.form .hint {
+    padding-left: 150px;
+    display: inline-block
+}
+
+.form .row {
+    margin-top: 10px
+}
+
+.contentArea {
+    margin-left: 50px
+}
+
+.content {
+    display: inline-block;
+    min-width: 650px;
+    vertical-align: top;
+    margin-right: 50px;
+    margin-top: 20px
+}
+
+.menuTitle {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 10px 0 5px 0;
+    display: inline-block
+}
+
+.longInput {
+    width: 500px;
+    padding: 5px
+}
+
+.formButton {
+    padding: 5px;
+    width: 120px;
+    border-radius: 5px;
+    -webkit-appearance: none;
+    border-style: solid;
+    background-color: #8585EE;
+    border-color: #9696EB #6363E4 #3F3FCC;
+    cursor: pointer;
+    color: #fff;
+    font-size: inherit
+}
+
+.itemBlock {
+    margin: 10px 0 20px 0
+}
+
+.itemBlock .itemPart {
+    display: inline-block
+}
+
+.itemBlock .rightPart {
+    float: right
+}
+
+.messageItem {
+    margin-right: 15px
+}
+
+.itemBlock .messageBody {
+    max-width: 530px
+}
+
+.itemBlock .actionLink {
+    float: right
+}
+
+.itemBlock .messageOfMessage {
+    float: right
+}
+
+.itemBlock .padTitle {
+    max-width: 550px
+}
+
+.itemBlock .detailLink {
+    width: 80px;
+    text-align: center;
+    float: right
+}
+
+.itemBlock .itemDetail {
+    font-size: smaller;
+    margin-top: 5px;
+    color: #454545
+}
+
+.content .more {
+    text-align: center;
+    margin-right: 15px;
+    border-radius: 2px
+}
+
+.content .more-link {
+    display: block;
+    padding: 2px;
+    background-color: #e6e6e6
+}
+
+.content .more-link:hover {
+    background-color: #8585EE;
+    color: #fff
+}
+
+.content .emptyList {
+    margin-top: 5px
+}
+
+#myUserGroups {
+    margin-bottom: 50px
+}
+
+.pageTitle {
+    font-size: 26px
+}
+
+.contentPart .partTitle {
+    font-weight: 700;
+    margin: 15px 0 5px 0;
+    display: inline-block;
+    min-width: 150px
+}
+
+.contentPart .partContent {
+    margin: 10px 0
+}
+
+.contentPart .subPartTitle {
+    font-weight: 700;
+    margin: 5px 0 5px 0;
+    display: inline-block
+}
+
+.content .shareLink {
+    margin-left: 15px
+}
+
+.candidateGroups,.candidateContacts {
+    margin-left: 15px
+}
+
+.submit {
+    margin-top: 10px
+}
+
+.left {
+    position: absolute;
+    width: 50%
+}
+
+.right {
+    float: right;
+    width: 50%
+}
+
+.feedback {
+    margin: 0 auto;
+    width: 80%;
+    margin-top: 50px;
+    margin-bottom: 30px
+}
+
+.feedbackForm .messageArea {
+    display: block
+}
+
+.feedbackForm .row {
+    margin-top: 10px
+}
+
+.feedback textarea {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    width: 80%;
+    min-width: 300px;
+    height: 300px;
+    font-size: inherit
+}
