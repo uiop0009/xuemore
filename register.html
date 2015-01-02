@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title data-l10n-id="home.serverName">连星</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="shortcut icon" href="/favicon.ico">
+    
+    <link href="static/bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="static/flat-ui-dist/css/flat-ui.min.css" rel="stylesheet">
+    <link href="static/css/common-setting.css" rel="stylesheet">
+    <link href="static/css/login.css" rel="stylesheet">
+</head>
+
+<body>
+<div id="login-frame">
+      <div class="row">
+          <div class="col-sm-3">
+            <p class="glyphicon glyphicon-send" id="plane"></p>
+            <h4 id="welcome">欢迎成为<br><small>连星用户</small></h4>
+          </div>
+
+          <div class="col-sm-9">
+          <div id="registerForm" action="/register" method="post" class="login-form">
+            <div class="form-group">
+              <input type="text" class="form-control login-field" name="userId" placeholder="用户名" id="userId" />
+              <label class="login-field-icon fui-user" for="userId"></label>
+            </div>
+            
+            <div class="form-group">
+              <input type="text" class="form-control login-field" name="email" placeholder="邮箱" id="email" />
+              <label class="login-field-icon fui-mail" for="email"></label>
+            </div>
+
+            <div class="form-group">
+              <input type="password" class="form-control login-field" placeholder="密码" id="password" name="password" />
+              <label class="login-field-icon fui-lock" for="password"></label>
+            </div>
+            
+            <div class="form-group">
+              <input type="password" class="form-control login-field" placeholder="确认密码" id="confirmPassword" name="confirmPassword" />
+              <label class="login-field-icon fui-lock" for="confirmPassword"></label>
+            </div>
+
+            
+            <label class="checkbox" id="agreementLabel" for="userAgreement">
+                	<input type="checkbox" value="" id="userAgreement" checked="checked" data-toggle="checkbox"> <span id="userAgreement-text">我已阅读并接受<a href="#">《连星网用户协议》</a></span>
+            </label>
+            
+            <a class="btn btn-primary btn-lg btn-block" id="registerButton" data-l10n-id="home.register" href="#">注&nbsp;&nbsp;&nbsp;&nbsp;册</a>
+            <div class="bottom-options clearfix">
+            	<div class="messageArea pull-left">
+            		<label id="registerMessage" class="hint"></label>
+            	</div>
+            	<a href="/login" class="login-link newAccount pull-right" data-l10n-id="home.login">已有账号？直接登录</a>
+            </div>
+            </div>
+            
+          </div>
+      </div>
+</div>
+
+
+	<input type="hidden" id="invalidUserIdMessage" data-l10n-id="register.message.invalidUserId.value"  value="用户名无效" />
+    <input type="hidden" id="requirePasswordMessage" data-l10n-id="register.message.requirePassword.value"  value="请输入密码" />
+    <input type="hidden" id="nonIdenticalPasswordMessage" data-l10n-id="register.message.nonIdenticalPassword.value"  value="密码与确认密码不一致" />
+    <input type="hidden" id="successMessage" data-l10n-id="register.message.success.value"  value="注册成功" />
+
+
+
+	<script type="text/javascript" src="static/js/promise.js"></script>
+	<script type="text/javascript" src="static/js/ajax.js"></script>
+
+	<script type="text/javascript">
+            (function(){
+             if(!String.prototype.trim){
+                String.prototype.trim = function(){
+                    return this.replace(/^\s+|\s+$/g, "");
+                };
+             }
+             }());
+            (function(){
+                var userRegister = {
+                    userIdId: "userId",
+                    passwordId: "password",
+                    confirmPasswordId: "confirmPassword",
+                    formId: "registerForm",
+                    messageId: "registerMessage",
+                    mainButtonId: "registerButton",
+                    registerUrl: "/register",
+
+                    _gather: function () {
+                        return {
+                            "userId": this._getFieldValue(this.userIdId),
+                            "password": this._getFieldValue(this.passwordId),
+                            "confirmPassword": this._getFieldValue(this.confirmPasswordId)
+                        };
+                    },
+
+                    _getFieldValue: function (fieldId) {
+                        var fieldElement = document.getElementById(fieldId);
+                        if (fieldElement) {
+                            return fieldElement.value;
+                        }
+                        return null;
+                    },
+
+                    _getText: function(textId){
+                        var textElement = document.getElementById(textId);
+                        if(textElement){
+                            return textElement.textContent || textElement.innerText || textElement.value;
+                        }
+                        return "";
+                    },
+
+                    _showMessage: function (msg) {
+                        var messageContainer = document.getElementById(this.messageId);
+                        if(messageContainer.textContent!==undefined){
+                            messageContainer.textContent = msg;
+                        }
+                        else{
+                            messageContainer.innerText = msg;
+                        }
+                    },
+
+                    _validateUserId: function(userId){
+                        return /^([a-zA-Z0-9]){6,20}$/.test(userId);
+                    },
+
+                    validate: function () {
+                        var userInfo = this._gather();
+                        var validationMessage = "";
+                        if(!this._validateUserId(userInfo.userId)){
+                            validationMessage = this._getText("invalidUserIdMessage");
+                        }
+                        else if (!userInfo.password || userInfo.password.trim() === "") {
+                            validationMessage = this._getText("requirePasswordMessage");
+                        }
+                        else if (userInfo.password !== userInfo.confirmPassword) {
+                            validationMessage = this._getText("nonIdenticalPasswordMessage");
+                        }
+                        this._showMessage(validationMessage)
+                        return validationMessage === "";
+                    },
+
+                    register: function () {
+                        var self = this;
+                        var promise = new Promise();
+                        var userInfo = this._gather();
+                        ajax.jsonPost(this.registerUrl, userInfo).then(
+                            function (userId) {
+                                self._showMessage(self._getText("successMessage"));
+                                promise.fulfill(userId);
+                            },
+                            function (errorMessage) {
+                                self._showMessage(errorMessage.responseText);
+                                promise.reject(errorMessage);
+                            }
+                        );
+                        return promise;
+                    },
+
+                    submit: function(){
+                        document.getElementById(this.formId).submit();
+                    }
+                };
+
+                var validateAndRegister = function(){
+                    if(userRegister.validate()){
+                        userRegister.register().then(function(){
+                            window.location.href = "/user";
+                       });
+                   }
+                };
+
+                var submitBtn = document.getElementById(userRegister.mainButtonId);
+                submitBtn.onclick = function(e){
+                    validateAndRegister();
+                };
+                
+                var pressEnterKey = function(e){
+                    var evt = e || window.event;
+                    var keyCode = evt.which || evt.keyCode;
+                    if(keyCode === 13){ // enter
+                        validateAndRegister();
+                    }
+                };
+
+                var userIdInput = document.getElementById(userRegister.userIdId);
+                var passwordInput = document.getElementById(userRegister.passwordId);
+                var confirmPasswordInput = document.getElementById(userRegister.confirmPasswordId);
+                userIdInput.onkeyup = pressEnterKey;
+                passwordInput.onkeyup = pressEnterKey;
+                confirmPasswordInput.onkeyup = pressEnterKey;
+
+            }());
+
+        </script>
+
+	<script type="text/javascript" src="static/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="static/flat-ui-dist/js/flat-ui.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+				$('[data-toggle="checkbox"]').radiocheck();
+				var userid = $('#userId');
+				var email = $('#email');
+				userid.on('focus',function(){
+						userid.attr('placeholder','6~20个字母或数字');
+					});
+				userid.on('focusout',function(){
+						userid.attr('placeholder','用户名');
+					});
+				email.on('focus',function(){
+						email.attr('placeholder','用于验证账号及找回密码');
+					});
+				email.on('focusout',function(){
+						email.attr('placeholder','邮箱');
+					});
+				
+				
+				
+				
+				
+			});
+	</script>
+</body>
+</html>

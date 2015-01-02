@@ -15,7 +15,7 @@
 
 <body>
 	
-  <div id="login-frame">
+<div id="login-frame">
       <div class="row">
           <div class="col-sm-3">
             <p class="glyphicon glyphicon-send" id="plane"></p>
@@ -23,33 +23,35 @@
           </div>
 
           <div class="col-sm-9">
-          <div class="login-form">
+          <div action="/login" method="post" class="login-form">
             <div class="form-group">
-              <input type="text" class="form-control login-field" value="" placeholder="您的用户名" id="login-name" />
-              <label class="login-field-icon fui-user" for="login-name"></label>
+              <input type="text" class="form-control login-field" name="userId" placeholder="您的用户名" id="userId" />
+              <label class="login-field-icon fui-user" for="userId"></label>
             </div>
 
             <div class="form-group">
-              <input type="password" class="form-control login-field" value="" placeholder="密码" id="login-pass" />
-              <label class="login-field-icon fui-lock" for="login-pass"></label>
+              <input type="password" class="form-control login-field" placeholder="密码" id="password" name="password" />
+              <label class="login-field-icon fui-lock" for="password"></label>
             </div>
 
-            <a class="btn btn-primary btn-lg btn-block" href="#">登&nbsp;&nbsp;&nbsp;&nbsp;录</a>
-            <a class="login-link" href="#">&nbsp;&nbsp;&nbsp;&nbsp;忘 记 密 码 ？</a>
-          </div>
+            <div class="addoptions clearfix">
+                <label class="checkbox checkboxShift pull-left" for="autologin">
+                	<input type="checkbox" value="" id="autologin" data-toggle="checkbox"> <span id="autologin-text">下次自动登录</span>
+                </label>
+                <a class="login-link forgetPassword pull-right" href="#">忘 记 密 码 ？</a>
+            </div>
+            <a class="btn btn-primary btn-lg btn-block" id="loginButton" data-l10n-id="home.login" href="#">登&nbsp;&nbsp;&nbsp;&nbsp;录</a>
+            <div class="bottom-options clearfix">
+            	<div class="messageArea pull-left">
+            		<label id="loginMessage" class="hint"></label>
+            	</div>
+            	<a href="/register" class="login-link newAccount pull-right" data-l10n-id="home.register">注 册 新 账 号</a>
+            </div>
+            </div>
+            
           </div>
       </div>
-  </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+</div>
     
     
     
@@ -60,8 +62,7 @@
     
 	<script type="text/javascript" src="static/js/promise.js"></script>
 	<script type="text/javascript" src="static/js/ajax.js"></script>
-	<script type="text/javascript" src="static/js/jquery-1.11.1.min.js"></script>
-    <script type="text/javascript" src="static/flat-ui-dist/js/flat-ui.min.js"></script>
+	
     <script type="text/javascript">
             (function(){
              if(!String.prototype.trim){
@@ -172,9 +173,21 @@
             var passwordInput = document.getElementById(userLogin.passwordId);
             userIdInput.onkeyup = pressEnterKey;
             passwordInput.onkeyup = pressEnterKey;
+			
+			
 
             }());
-
+		
     </script>
+    
+    <script type="text/javascript" src="static/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="static/flat-ui-dist/js/flat-ui.min.js"></script>
+    
+    <script type="text/javascript">
+		$(function(){
+				$('[data-toggle="checkbox"]').radiocheck();
+				
+			});
+	</script>
 </body>
 </html>

@@ -32,3 +32,41 @@ body {
 	font-family: "Microsoft Yahei","Helvetica Neue",Helvetica,Arial,sans-serif;
 	
 }
+.addoptions {
+	margin-bottom: 6px;
+}
+.checkboxShift {
+	margin-top: 0;
+}
+#autologin-text, #userAgreement-text {
+	color: #afb7b8;
+}
+#agreementLabel {
+	margin-top: -4px;
+}
+.forgetPassword {
+	display: inline-block;
+	margin-top: 0;
+}
+#loginButton {
+	margin-bottom: 5px;
+}
+.messageArea {
+	margin-top: 1px;
+}
+.hint {
+	color: #F33;
+	font-size: 15px;
+}
+.newAccount {
+	font-size: 14px;
+	margin-top: 5px;
+	text-decoration: underline;
+}
+.newAccount:hover {
+	text-decoration: underline;
+}
+.messageArea {
+	height: 30px;
+}
+
