@@ -1,0 +1,219 @@
+<!doctype html>
+<html>
+<head>
+	<title data-l10n-id="home.serverName">连星</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="shortcut icon" href="/favicon.ico">
+    
+    <link href="static/bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="static/flat-ui-dist/css/flat-ui.min.css" rel="stylesheet">
+    <link href="static/css/common-setting.css" rel="stylesheet">
+    <link href="static/css/user.css" rel="stylesheet">
+</head>
+
+<body>
+	<div id="header">
+    	<div class="container dispace-1">
+        	<span id="welcome">欢迎来到连星</span>&nbsp;&nbsp;
+            <span id="introduce">实时互动教学网站</span>
+        </div>        
+    </div>
+    
+    <div class="container dispace-1">
+    	<nav class="navbar navbar-defind" role="navigation">
+        	<div class="navbar-header">
+            	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainMenu"></button>
+                <a class="navbar-brand-defind" href="/user"><span class="glyphicon glyphicon-send" id="send"></span><span id="logotitle">连 星</span></a>
+            </div>
+            <div class="collapse navbar-collapse" id="mainMenu">
+            	<ul class="nav navbar-nav mainOption">
+                	<li class="grey active"><a href="/user">我</a></li>
+                    <li><a class="grey" href="/user/contacts">联系人</a></li>
+                    <li><a class="grey" href="/user/userGroups">小组</a></li>
+                    <li><a class="grey" href="/user/pads">文档</a></li>
+                    <li><a class="grey" href="/user/slides">幻灯片</a></li>
+                    <li><a class="grey" href="/user/messages">消息</a></li>
+                </ul>
+                <form class="navbar-form navbar-right" id="searchform" action="#" role="search">
+                	<div class="form-group">
+                    	<div class="input-group">
+                        	<input class="form-control" id="searchBox" type="search" placeholder="用户/小组">
+                            <span class="input-group-btn">
+                            	<button type="submit" class="btn" id="searchBtn"><span class="fui-search"></span></button>
+                            </span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </nav>
+    </div>
+    
+    <div id="banner">
+    	<div class="container dispace-2">
+        	<p class="column-title">我的文档</p>
+            <div class="row" id="docSearch">
+            	<div class="col-sm-10 col-xs-9">
+            	<input type="text" placeholder="文档标题" class="form-control searchFrame">
+  				</div>
+                <div class="col-sm-2 col-xs-3">
+  				<button class="btn btn-whiteframe pull-right" type="submit">新 文 档</button>
+                </div>
+            </div>
+            <div class="row row-fluid">
+            	<div class="col-sm-11 col-xs-10 outcontainer1">
+                	<div class="row">
+                    	<div class="col-sm-3 col-xs-6">
+                        	<p class="docTitle"><a href="#">工作计划</a></p>
+                            <p class="docInfo">最近更新：</p>
+                            <p class="docInfo">2014-12-25 15:30</p>
+                            <div class="btn-group detailGroup">
+                            	<button data-toggle="dropdown" class="btn btn-whiteframe dropdown-toggle detailBtn" type="button">详 情 <span class="caret"></span></button>
+                                <ul role="menu" class="dropdown-menu docDetail">
+                                	<p class="innertitle">文档名：</p>
+                                    <a href="#">工作计划</a>
+                                    <p class="innertitle">最近更新：</p>
+                                    <p>2014-12-25 15:30</p>
+                                    <p class="innertitle">已共享的组：</p>
+                                    <p><a href="#">hepea</a><a href="#">议会</a><a href="#">大班</a><a href="#"><span class="glyphicon glyphicon-plus"></span></a></p>
+                                    <p class="innertitle">已共享的联系人：</p>
+                                    <p><a href="#">小飞机</a><a href="#">hiearth</a><a href="#"><span class="glyphicon glyphicon-plus"></span></a></p>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 col-xs-6">
+                        	<p class="docTitle"><a href="#">学习计划</a></p>
+                            <p class="docInfo">最近更新：</p>
+                            <p class="docInfo">2014-12-25 15:30</p>
+                            <div class="btn-group detailGroup">
+                            	<button data-toggle="dropdown" class="btn btn-whiteframe dropdown-toggle detailBtn" type="button">详 情 <span class="caret"></span></button>
+                                <ul role="menu" class="dropdown-menu docDetail">
+                                	<p class="innertitle">文档名：</p>
+                                    <a href="#">学习计划</a>
+                                    <p class="innertitle">最近更新：</p>
+                                    <p>2014-12-25 15:30</p>
+                                    <p class="innertitle">已共享的组：</p>
+                                    <p><a href="#">hepea</a><a href="#">议会</a><a href="#">大班</a><a href="#"><span class="glyphicon glyphicon-plus"></span></a></p>
+                                    <p class="innertitle">已共享的联系人：</p>
+                                    <p><a href="#">小飞机</a><a href="#">hiearth</a><a href="#"><span class="glyphicon glyphicon-plus"></span></a></p>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 col-xs-6">
+                        	<p class="docTitle"><a href="#">讨论会</a></p>
+                            <p class="docInfo">最近更新：</p>
+                            <p class="docInfo">2014-12-25 15:30</p>
+                            <div class="btn-group detailGroup">
+                            	<button data-toggle="dropdown" class="btn btn-whiteframe dropdown-toggle detailBtn" type="button">详 情 <span class="caret"></span></button>
+                                <ul role="menu" class="dropdown-menu docDetail">
+                                	<p class="innertitle">文档名：</p>
+                                    <a href="#">讨论会</a>
+                                    <p class="innertitle">最近更新：</p>
+                                    <p>2014-12-25 15:30</p>
+                                    <p class="innertitle">已共享的组：</p>
+                                    <p><a href="#">hepea</a><a href="#">议会</a><a href="#">大班</a><a href="#"><span class="glyphicon glyphicon-plus"></span></a></p>
+                                    <p class="innertitle">已共享的联系人：</p>
+                                    <p><a href="#">小飞机</a><a href="#">hiearth</a><a href="#"><span class="glyphicon glyphicon-plus"></span></a></p>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 col-xs-6">
+                        	<p class="docTitle"><a href="#">研究计划</a></p>
+                            <p class="docInfo">最近更新：</p>
+                            <p class="docInfo">2014-12-25 15:30</p>
+                            <div class="btn-group detailGroup">
+                            	<button data-toggle="dropdown" class="btn btn-whiteframe dropdown-toggle detailBtn" type="button">详 情 <span class="caret"></span></button>
+                                <ul role="menu" class="dropdown-menu docDetail">
+                                	<p class="innertitle">文档名：</p>
+                                    <a href="#">研究计划</a>
+                                    <p class="innertitle">最近更新：</p>
+                                    <p>2014-12-25 15:30</p>
+                                    <p class="innertitle">已共享的组：</p>
+                                    <p><a href="#">hepea</a><a href="#">议会</a><a href="#">大班</a><a href="#"><span class="glyphicon glyphicon-plus"></span></a></p>
+                                    <p class="innertitle">已共享的联系人：</p>
+                                    <p><a href="#">小飞机</a><a href="#">hiearth</a><a href="#"><span class="glyphicon glyphicon-plus"></span></a></p>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-1 col-xs-2 outcontainer2">
+                	<a class="pull-right moreIcon" href="#">
+                    	&nbsp;<span class="fui-arrow-right"></span>
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <!--我的组+我的幻灯片-->
+    <div class="container dispace-2">
+    	<div class="row">
+        	<div class="col-sm-7 col-xs-12">
+            	<p class="column-title grey">我的组</p>
+                <div class="row" id="newGroup">
+            		<div class="col-sm-9 col-xs-9">
+            			<input type="text" placeholder="组名" class="form-control searchFrame">
+  					</div>
+                	<div class="col-sm-3 col-xs-3">
+  						<button class="btn btn-primary pull-right groupBtn" type="submit">创 建 组</button>
+                	</div>
+            	</div>
+            </div>
+        	<div class="col-sm-5 col-xs-12">
+        		
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+	<script type="text/javascript" src="static/js/promise.js"></script>
+	<script type="text/javascript" src="static/js/ajax.js"></script>
+	<script type="text/javascript" src="static/js/jquery-1.11.1.min.js"></script>
+    
+    <script type="text/javascript" src="static/flat-ui-dist/js/flat-ui.min.js"></script>
+    
+    <script type="text/javascript">
+		$(function(){
+				$('.input-group').on('focus', '.form-control', function () {
+      				$(this).closest('.input-group, .form-group').addClass('focus');
+    			}).on('blur', '.form-control', function () {
+      				$(this).closest('.input-group, .form-group').removeClass('focus');
+    			});
+				
+				var t0,t1,t2,t3;
+				$('.detailGroup').each(function(index, element) {
+                    $(this).hover(function(){
+							var t = window['t'+index];
+							clearTimeout(t);
+							$(this).addClass('open');
+						},function(){
+							var $this = $(this);
+							window['t'+ index]=setTimeout(function(){$this.removeClass('open');},300);
+					});
+					
+                });
+				
+				
+				
+				
+				
+				
+			});
+	</script>
+</body>
+</html>
