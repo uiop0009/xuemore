@@ -15,22 +15,10 @@
 	line-height: 40px;
 }
 
-#welcome {
-	font-size: 18px;
-	color: #48c9b0;
-	font-weight: 900;
-	letter-spacing: 3px;
-}
-
-#introduce {
-	font-size: 15px;
-	color: #FFF;
-}
-
 #banner {
 	background-color: #48c9b0;
 	margin-bottom: 38px;
-	padding-top: 40px;
+	padding-top: 30px;
 	padding-bottom: 32px;
 }
 
@@ -139,6 +127,7 @@ li.active>a {
 }
 .docDetail {
 	padding: 4px 16px 18px;
+	margin-top: 0px;
 }
 .docDetail p {
 	font-size: 14px;
@@ -215,4 +204,111 @@ li.active>a {
 	padding: 10px 22px;
 }
 
+.groupTitle a {
+	color: #30a58e;
+}
 
+.doclink {
+	font-size: 15px;
+	position: relative;
+	top: -7px;
+}
+.doclink:hover {
+	text-decoration: underline;
+}
+
+.groupDetailBtn {
+	margin-top: -10px;
+	border: none;
+	background-color: #1abc9c;
+}
+.iconSmall {
+	font-size: 80%;
+}
+
+.groupDetail {
+	left: 105%;
+	bottom: 30%;
+	top: auto;
+}
+
+.inverseIcon:hover {
+	border-color: #34bea3;
+}
+.inverseIcon:hover span {
+	color: #34bea3;
+}
+.inverseIcon:active {
+	border-color: #e1faf5;
+}
+.inverseIcon:active span {
+	color: #e1faf5;
+}
+
+.myPPT {
+	background-color: #48c99a;
+	padding: 15px 25px 25px;
+	min-width: 260px;
+	margin-top: 9px;
+}
+#mypptTitle {
+	font-size: 26px;
+	color: #FFF;
+	letter-spacing: 4px;
+}
+#smallBtn {
+	width: 35px;
+	height: 35px;
+	letter-spacing: -18px;
+	margin-top: 5px;
+}
+#smallBtn span {
+	font-size: 16px;
+	line-height: 30px;
+}
+.shadowBorder {
+	width: 100%;
+	height: 0;
+	border-top: #32a97e solid 1px;
+	border-bottom: #b2e4d2 solid 1px;
+	margin: 4px auto;
+}
+#picture {
+	margin-top: 17px;
+}
+#picture img {
+	width: 80%;
+	vertical-align: top;
+	border: #FFF solid 1px;
+}
+#pptTitle {
+	font-size: 16px;
+	color: #FFF;
+	width: 17px;
+	display: inline-block;
+	line-height: 22px;
+	vertical-align: bottom;
+	margin-left: 7%;
+}
+#picture>a:hover>img {
+	border-color: #21a78d;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.standard-grey {
+	color: #737373;
+}

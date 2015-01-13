@@ -19,3 +19,80 @@ body {
 .text-center {
 	text-align: center;
 }
+
+.footer {
+	background-color: #333;
+	text-align: center;
+	line-height: 40px;
+	height: 45px;
+	font-size: 12px;
+	margin-top: 60px;
+}
+
+.superscript {
+	font-size: 70%;
+	color: #FF0;
+	position: absolute;
+	margin-top: 4px;
+	margin-left: 1px;
+}
+
+.newDoc {
+	color: #5baf2d;
+}
+
+.newDoc:hover {
+	color: #76c948;
+}
+
+#welcome {
+	font-size: 18px;
+	color: #48c9b0;
+	font-weight: 900;
+	letter-spacing: 3px;
+	margin-left: 3px;
+}
+
+#introduce {
+	font-size: 15px;
+	color: #FFF;
+}
+
+.userinfo {
+	margin-top: 3px;
+	margin-right: 5px;
+}
+
+.userIcon {
+	color: #48c9b0;
+	padding: 5px;
+	border: #48c9b0 solid 2px;
+	border-radius: 30px;
+	
+}
+
+.userdropdown {
+	min-width: 140px;
+	background-color: #34495e;
+	margin-top: 3px;
+	
+}
+.userdropdown>li>a {
+	color: #FFF;
+}
+.userdropdown>li>a:hover {
+	background-color: #16a085;
+	color: #FFF;
+}
+
+
+
+
+
+
+
+
+
+
+
+

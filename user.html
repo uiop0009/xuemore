@@ -8,6 +8,7 @@
     
     <link href="static/bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet">
 	<link href="static/flat-ui-dist/css/flat-ui.min.css" rel="stylesheet">
+    
     <link href="static/css/common-setting.css" rel="stylesheet">
     <link href="static/css/user.css" rel="stylesheet">
 </head>
@@ -17,7 +18,15 @@
     	<div class="container dispace-1">
         	<span id="welcome">欢迎来到连星</span>&nbsp;&nbsp;
             <span id="introduce">实时互动教学网站</span>
-        </div>        
+            <div class="btn-group detailGroup pull-right userinfo">
+            	<a data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user userIcon"></span></a>
+                <ul role="menu" class="dropdown-menu userdropdown">
+                	<li><a href="#"><span class="fui-user"></span> uiop0009</a></li>
+                    <li><a href="#"><span class="fui-gear"></span> 账号设置</a></li>
+                    <li><a href="#"><span class="fui-exit"></span> 退出</a></li>
+                </ul>
+            </div>
+        </div>   
     </div>
     
     <div class="container dispace-1">
@@ -138,7 +147,7 @@
                     </div>
                 </div>
                 <div class="col-sm-1 col-xs-2 outcontainer2">
-                	<a class="pull-right moreIcon" href="#">
+                	<a class="pull-right moreIcon" href="#" title="更多">
                     	&nbsp;<span class="fui-arrow-right"></span>
                     </a>
                 </div>
@@ -150,7 +159,8 @@
     <div class="container dispace-2">
     	<div class="row">
         	<div class="col-sm-7 col-xs-12">
-            	<p class="column-title grey">我的组</p>
+            	<p class="column-title standard-grey">我的组</p>
+                <!--创建组-->
                 <div class="row" id="newGroup">
             		<div class="col-sm-9 col-xs-9">
             			<input type="text" placeholder="组名" class="form-control searchFrame">
@@ -159,9 +169,95 @@
   						<button class="btn btn-primary pull-right groupBtn" type="submit">创 建 组</button>
                 	</div>
             	</div>
+                <!--组列表-->
+                <div class="row row-fluid">
+                	<div class="col-sm-10 col-xs-9 outcontainer1">
+                    	<div class="row">
+                        	<div class="col-sm-4 col-xs-4">
+                            	<p class="docTitle groupTitle"><a href="#">工作组</a></p>
+                            	<p class="docInfo standard-grey">最新添加的文档：</p>
+                            	<p><a class="doclink" href="#">网站推广</a></p>
+                                <div class="btn-group detailGroup">
+                            		<button data-toggle="dropdown" class="btn btn-whiteframe dropdown-toggle detailBtn groupDetailBtn" type="button">详 情&nbsp; <span class="fui-triangle-right-large iconSmall"></span></button>
+                                	<ul role="menu" class="dropdown-menu docDetail groupDetail">
+                                		<p class="innertitle">组名：</p>
+                                    	<a href="#">工作组</a>
+                                    	<p class="innertitle">创建人：</p>
+                                    	<a href="#">hiearth</a>
+                                        <p class="innertitle">是组成员：</p>
+                                    	<p>是</p>
+                                    	<p class="innertitle">小组文档：</p>
+                                    	<p><a href="#">hepea</a><a href="#">议会</a><a href="#">大班</a><a href="#"><span class="glyphicon glyphicon-plus"></span></a></p>
+                                    	<p class="innertitle">小组成员：</p>
+                                    	<p><a href="#">小飞机</a><a href="#">hiearth</a></p>
+                                	</ul>
+                            	</div>
+                            </div>
+                            <div class="col-sm-4 col-xs-4">
+                            	<p class="docTitle groupTitle"><a href="#">爱学习 </a><span class="fui-link superscript"></span></p>
+                            	<p class="docInfo standard-grey">最新添加的文档：</p>
+                            	<p><a class="doclink" href="#">网站推广</a></p>
+                                <div class="btn-group detailGroup">
+                            		<button data-toggle="dropdown" class="btn btn-whiteframe dropdown-toggle detailBtn groupDetailBtn" type="button">详 情&nbsp; <span class="fui-triangle-right-large iconSmall"></span></button>
+                                	<ul role="menu" class="dropdown-menu docDetail groupDetail">
+                                		<p class="innertitle">组名：</p>
+                                    	<a href="#">爱学习</a>
+                                    	<p class="innertitle">创建人：</p>
+                                    	<a href="#">uiop0009</a>
+                                        <p class="innertitle">是组成员：</p>
+                                    	<p>是</p>
+                                    	<p class="innertitle">小组文档：</p>
+                                    	<p><a href="#">hepea</a><a class="newDoc" href="#">议会</a><a class="newDoc" href="#">大班</a><a href="#"><span class="glyphicon glyphicon-plus"></span></a></p>
+                                    	<p class="innertitle">小组成员：</p>
+                                    	<p><a href="#">小飞机</a><a href="#">hiearth</a><a href="#"><span class="glyphicon glyphicon-plus"></span></a></p>
+                                	</ul>
+                            	</div>
+                            </div>
+                            <div class="col-sm-4 col-xs-4">
+                            	<p class="docTitle groupTitle"><a href="#">棋友会</a></p>
+                            	<p class="docInfo standard-grey">最新添加的文档：</p>
+                            	<p><a class="doclink" href="#">残局</a></p>
+                                <div class="btn-group detailGroup">
+                            		<button data-toggle="dropdown" class="btn btn-whiteframe dropdown-toggle detailBtn groupDetailBtn" type="button">详 情&nbsp; <span class="fui-triangle-right-large iconSmall"></span></button>
+                                	<ul role="menu" class="dropdown-menu docDetail groupDetail">
+                                		<p class="innertitle">组名：</p>
+                                    	<a href="#">棋友会</a>
+                                    	<p class="innertitle">创建人：</p>
+                                    	<a href="#">uiop0008</a>
+                                        <p class="innertitle">是组成员：</p>
+                                    	<p>是</p>
+                                    	<p class="innertitle">小组文档：</p>
+                                    	<p><a href="#">hepea</a><a href="#">议会</a><a class="newDoc" href="#">国际象棋...</a><a href="#"><span class="glyphicon glyphicon-plus"></span></a></p>
+                                    	<p class="innertitle">小组成员：</p>
+                                    	<p><a href="#">小飞机</a><a href="#">hiearth</a></p>
+                                	</ul>
+                            	</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-2 col-xs-3 outcontainer2">
+                    	<a class="pull-right moreIcon inverseIcon" href="#" title="更多">
+                    	&nbsp;<span class="fui-arrow-right"></span>
+                    	</a>
+                    </div>
+                </div>
             </div>
-        	<div class="col-sm-5 col-xs-12">
-        		
+            <!--我的幻灯片-->
+        	<div class="col-sm-5 col-xs-12" id="moreSpacing">
+        		<div class="myPPT">
+                	<div>
+                    	<span id="mypptTitle">我的幻灯片</span>
+                        <a class="pull-right moreIcon" id="smallBtn" href="#" title="更多">
+                    	&nbsp;<span class="fui-arrow-right"></span>
+                    	</a>
+                    </div>
+                    <div class="shadowBorder"></div>
+                    <div id="picture">
+                    	<a href="#"><img src="pic/pptdemo.jpg" />
+                        <div id="pptTitle">演讲的艺术</div></a>
+                    </div>
+                    
+                </div>
             </div>
         </div>
     </div>
@@ -177,7 +273,9 @@
     
     
     
-    
+    <div class="footer">
+    	<a href="#"><span class="glyphicon glyphicon-send"></span> 连星 @ Copyright by www.hepea.net</a>
+    </div>
     
     
     
@@ -195,21 +293,28 @@
       				$(this).closest('.input-group, .form-group').removeClass('focus');
     			});
 				
-				var t0,t1,t2,t3;
+				
 				$('.detailGroup').each(function(index, element) {
                     $(this).hover(function(){
-							var t = window['t'+index];
-							clearTimeout(t);
+							clearTimeout(window['t'+index]);
 							$(this).addClass('open');
 						},function(){
 							var $this = $(this);
-							window['t'+ index]=setTimeout(function(){$this.removeClass('open');},300);
+							window['t'+ index]=setTimeout(function(){$this.removeClass('open');},200);
 					});
 					
                 });
 				
-				
-				
+				function resizeWindow(){
+					if($(window).width() >= 768){
+						$('#moreSpacing').css('padding-left',50);
+					}
+					else {
+						$('#moreSpacing').css('padding-left',15);
+					}
+				}
+				resizeWindow();
+				$(window).resize(resizeWindow);
 				
 				
 				
