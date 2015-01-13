@@ -1,0 +1,314 @@
+@charset "utf-8";
+/* CSS Document */
+
+.dispace-1 {
+	padding-left: 5%;
+	padding-right: 5%;
+}
+.dispace-2 {
+	padding-left: 8%;
+	padding-right: 8%;
+}
+
+#header {
+	background-color: #737373;
+	line-height: 40px;
+}
+
+#banner {
+	background-color: #48c9b0;
+	margin-bottom: 38px;
+	padding-top: 30px;
+	padding-bottom: 32px;
+}
+
+.navbar-defind {
+	margin-bottom: 0;
+	min-height: 60px;
+}
+
+.navbar-brand-defind {
+	float: left;
+	line-height: 60px;
+	margin-right: 40px;
+	font-size: 23px;
+	color: #737373;
+}
+#send {
+	font-size: 38px;
+	position: absolute;
+	
+	margin-top: 10px;
+}
+#logotitle {
+	margin-left: 54px;
+	
+}
+.mainOption>li>a {
+	line-height: 60px;
+	padding: 0 21px;
+	font-size: 18px;
+	font-weight: 100;
+	
+}
+li.active {
+	background-color: #48c9b0;
+	
+}
+li.active>a {
+	color: #FFF;
+}
+
+
+#searchform {
+	padding: 12px 0;
+}
+
+#searchBox, #searchBtn {
+	border-radius: 20px;
+	font-family: inherit;
+}
+#searchBox {
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+#searchBtn {
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+.column-title {
+	font-size: 32px;
+	color: #FFF;
+	letter-spacing: 7px;
+}
+
+#docSearch {
+	margin-top: 25px;
+	margin-bottom: 25px;
+}
+.searchFrame {
+	border-color: #48c9b0;
+	font-family: inherit;
+}
+.btn-whiteframe {
+	background-color: #48c9b0;
+	border: #FFF solid 1px;
+	color: #FFF;
+	border-radius: 5px;
+	height: 38px;
+	padding: 8px 32px;
+	margin-top: 2px;
+}
+.btn-whiteframe:hover {
+	background-color: #9cddd0;
+}
+.btn-whiteframe:active {
+	background-color: #1db396;
+}
+
+.docTitle {
+	font-size: 21px;
+	margin-bottom: 5px;
+}
+.docTitle a {
+	color: #000;
+}
+.docTitle a:hover {
+	color: #b3f1e5;
+}
+.docTitle a:active {
+	color: #0bac8d;
+}
+.docInfo {
+	font-size: 14px;
+	color: #FFF;
+	margin-bottom: 0;
+}
+.docDetail {
+	padding: 4px 16px 18px;
+	margin-top: 0px;
+}
+.docDetail p {
+	font-size: 14px;
+	margin-bottom: 0;
+}
+.innertitle {
+	font-weight: 900;
+	margin-top: 6px;
+	color: #737373;
+}
+.docDetail a {
+	display: inline-block;
+	margin-right: 8px;
+}
+.docDetail a:hover {
+	text-decoration: underline;
+}
+.detailBtn {
+	padding: 5px 14px;
+	margin-top: 12px;
+	margin-bottom: 10px;
+	height: auto;
+}
+
+.row-fluid {
+	display: table;
+}
+.moreIcon {
+	width: 60px;
+	height: 60px;
+	border: #a4e4d8 solid 3px;
+	border-radius: 60px;
+	text-align: center;
+	transition: none;
+}
+.outcontainer1 {
+	display: table-cell;
+	float: none;
+}
+.outcontainer2 {
+	min-height: 100%;
+	height: 100%;
+	vertical-align: middle;
+	display: table-cell;
+	float: none;
+}
+.moreIcon span {
+	color: #a4e4d8;
+	font-size: 30px;
+	line-height: 55px;
+}
+.moreIcon:hover {
+	border-color: #e1faf5;
+}
+.moreIcon:hover span {
+	color: #e1faf5;
+}
+.moreIcon:active {
+	border-color: #34bea3;
+}
+.moreIcon:active span{
+	color: #34bea3;
+}
+
+.grey {
+	color: #333;
+}
+
+#newGroup {
+	margin-bottom: 30px;
+}
+.groupBtn {
+	height: 42px;
+	padding: 10px 22px;
+}
+
+.groupTitle a {
+	color: #30a58e;
+}
+
+.doclink {
+	font-size: 15px;
+	position: relative;
+	top: -7px;
+}
+.doclink:hover {
+	text-decoration: underline;
+}
+
+.groupDetailBtn {
+	margin-top: -10px;
+	border: none;
+	background-color: #1abc9c;
+}
+.iconSmall {
+	font-size: 80%;
+}
+
+.groupDetail {
+	left: 105%;
+	bottom: 30%;
+	top: auto;
+}
+
+.inverseIcon:hover {
+	border-color: #34bea3;
+}
+.inverseIcon:hover span {
+	color: #34bea3;
+}
+.inverseIcon:active {
+	border-color: #e1faf5;
+}
+.inverseIcon:active span {
+	color: #e1faf5;
+}
+
+.myPPT {
+	background-color: #48c99a;
+	padding: 15px 25px 25px;
+	min-width: 260px;
+	margin-top: 9px;
+}
+#mypptTitle {
+	font-size: 26px;
+	color: #FFF;
+	letter-spacing: 4px;
+}
+#smallBtn {
+	width: 35px;
+	height: 35px;
+	letter-spacing: -18px;
+	margin-top: 5px;
+}
+#smallBtn span {
+	font-size: 16px;
+	line-height: 30px;
+}
+.shadowBorder {
+	width: 100%;
+	height: 0;
+	border-top: #32a97e solid 1px;
+	border-bottom: #b2e4d2 solid 1px;
+	margin: 4px auto;
+}
+#picture {
+	margin-top: 17px;
+}
+#picture img {
+	width: 80%;
+	vertical-align: top;
+	border: #FFF solid 1px;
+}
+#pptTitle {
+	font-size: 16px;
+	color: #FFF;
+	width: 17px;
+	display: inline-block;
+	line-height: 22px;
+	vertical-align: bottom;
+	margin-left: 7%;
+}
+#picture>a:hover>img {
+	border-color: #21a78d;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.standard-grey {
+	color: #737373;
+}
