@@ -28,7 +28,7 @@
             </div>
         </div>   
     </div>
-    
+    <!--主菜单-->
     <div class="container dispace-1">
     	<nav class="navbar navbar-defind" role="navigation">
         	<div class="navbar-header">
@@ -60,22 +60,50 @@
     
     <div id="banner">
     	<div class="container dispace-2">
-        	<p class="column-title">我的文档</p>
-            <div class="row" id="docSearch">
-            	<div class="col-sm-10 col-xs-9">
-            	<input type="text" placeholder="文档标题" class="form-control searchFrame">
-  				</div>
-                <div class="col-sm-2 col-xs-3">
-  				<button class="btn btn-whiteframe pull-right" type="submit">新 文 档</button>
+        	<!--消息窗-->
+            <div class="center messageContainer">
+            <div id="newMessage" class="newMessage hide">
+            	<div class="pull-left"><span class="fui-mail mailIcon"></span> <span class="newMessageTitle" id="msgTitle"></span></div>
+                <div class="pull-right arrowhead"><a id="develop"><span id="developIcon" class="fui-arrow-right mailIcon"></span></a></div>
+                <div class="text-center messageContent" id="msgContent">
+                	
+                </div>
+                <a id="viewAll" class="hide" href="/user/messages">
+                	<span class="fui-eye"> 查看全部
+                </a>
+                <div id="bottomBtn" class="text-center hide">
+                	<button class="btn btn-link smallBtn" id="allExcept"><span class="fui-check-circle"></span> 全部接受</button>
+                    <button class="btn btn-link smallBtn" id="allLgnore"><span class="fui-cross-circle"></span> 全部忽略</button>
+                    <button class="btn btn-link smallBtn" id="closePanel"><span class="fui-cross"></span> 关闭窗口</button>
                 </div>
             </div>
-            <div class="row row-fluid">
-            	<div class="col-sm-11 col-xs-10 outcontainer1">
-                	<div class="row">
+            </div>
+            <!--banner标题-->
+        	<div class="bannerText">
+        		<p class="userID">uiop0009</p>
+            	<p class="salutatory">欢迎来到连星 &nbsp; &nbsp;&nbsp;开启自由连接</p>
+            </div>
+        </div>
+    </div>
+    
+    <!--我的文档-->
+    <div class="container dispace-2 myDoc">
+        <p class="column-title standard-grey">我的文档</p>
+        <div class="row" id="docSearch">
+            <div class="col-sm-10 col-xs-9">
+            	<input type="text" placeholder="文档标题" class="form-control searchFrame">
+  			</div>
+            <div class="col-sm-2 col-xs-3">
+  				<button class="btn btn-whiteframe pull-right" type="submit">新 文 档</button>
+            </div>
+        </div>
+        <div class="row row-fluid">
+            <div class="col-sm-11 col-xs-10 outcontainer1">
+                <div class="row">
                     	<div class="col-sm-3 col-xs-6">
-                        	<p class="docTitle"><a href="#">工作计划</a></p>
-                            <p class="docInfo">最近更新：</p>
-                            <p class="docInfo">2014-12-25 15:30</p>
+                        	<p class="docTitle groupTitle"><a href="#">工作计划</a></p>
+                            <p class="docInfo standard-grey">最近更新：</p>
+                            <p class="docInfo standard-grey">2014-12-25 15:30</p>
                             <div class="btn-group detailGroup">
                             	<button data-toggle="dropdown" class="btn btn-whiteframe dropdown-toggle detailBtn" type="button">详 情 <span class="caret"></span></button>
                                 <ul role="menu" class="dropdown-menu docDetail">
@@ -91,9 +119,9 @@
                             </div>
                         </div>
                         <div class="col-sm-3 col-xs-6">
-                        	<p class="docTitle"><a href="#">学习计划</a></p>
-                            <p class="docInfo">最近更新：</p>
-                            <p class="docInfo">2014-12-25 15:30</p>
+                        	<p class="docTitle groupTitle"><a href="#">学习计划</a></p>
+                            <p class="docInfo standard-grey">最近更新：</p>
+                            <p class="docInfo standard-grey">2014-12-25 15:30</p>
                             <div class="btn-group detailGroup">
                             	<button data-toggle="dropdown" class="btn btn-whiteframe dropdown-toggle detailBtn" type="button">详 情 <span class="caret"></span></button>
                                 <ul role="menu" class="dropdown-menu docDetail">
@@ -109,9 +137,9 @@
                             </div>
                         </div>
                         <div class="col-sm-3 col-xs-6">
-                        	<p class="docTitle"><a href="#">讨论会</a></p>
-                            <p class="docInfo">最近更新：</p>
-                            <p class="docInfo">2014-12-25 15:30</p>
+                        	<p class="docTitle groupTitle"><a href="#">讨论会</a></p>
+                            <p class="docInfo standard-grey">最近更新：</p>
+                            <p class="docInfo standard-grey">2014-12-25 15:30</p>
                             <div class="btn-group detailGroup">
                             	<button data-toggle="dropdown" class="btn btn-whiteframe dropdown-toggle detailBtn" type="button">详 情 <span class="caret"></span></button>
                                 <ul role="menu" class="dropdown-menu docDetail">
@@ -127,9 +155,9 @@
                             </div>
                         </div>
                         <div class="col-sm-3 col-xs-6">
-                        	<p class="docTitle"><a href="#">研究计划</a></p>
-                            <p class="docInfo">最近更新：</p>
-                            <p class="docInfo">2014-12-25 15:30</p>
+                        	<p class="docTitle groupTitle"><a href="#">研究计划</a></p>
+                            <p class="docInfo standard-grey">最近更新：</p>
+                            <p class="docInfo standard-grey">2014-12-25 15:30</p>
                             <div class="btn-group detailGroup">
                             	<button data-toggle="dropdown" class="btn btn-whiteframe dropdown-toggle detailBtn" type="button">详 情 <span class="caret"></span></button>
                                 <ul role="menu" class="dropdown-menu docDetail">
@@ -144,17 +172,16 @@
                                 </ul>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-sm-1 col-xs-2 outcontainer2">
-                	<a class="pull-right moreIcon" href="#" title="更多">
-                    	&nbsp;<span class="fui-arrow-right"></span>
-                    </a>
                 </div>
             </div>
-            
+            <div class="col-sm-1 col-xs-2 outcontainer2">
+                <a class="pull-right moreIcon inverseIcon" href="#" title="更多">
+                    &nbsp;<span class="fui-arrow-right"></span>
+                </a>
+            </div>
         </div>
     </div>
+    
     <!--我的组+我的幻灯片-->
     <div class="container dispace-2">
     	<div class="row">
@@ -315,6 +342,162 @@
 				}
 				resizeWindow();
 				$(window).resize(resizeWindow);
+				
+				var isDevelop = false;
+				var newMessage = $('#newMessage');
+				var develop = $('#develop');
+				
+				var data = [5,
+				{msg:'<a href="/userView/uiop0007">uiop0007</a> 想邀请您作为联系人。', btn:'<a class="dispose1" order="1" onclick="authHelper.messageReply.receiveContact(this, \'uiop0007\');">接受</a> &nbsp;<a class="dispose2" order="1" onclick="authHelper.messageReply.omitContact(this, \'uiop0007\');">忽略</a>',deal:'0'},
+				{msg:'<a href="/userView/uiop0007">uiop0006</a> 想邀请您作为联系人。', btn:'<a class="dispose1" order="2" onclick="authHelper.messageReply.receiveContact(this, \'uiop0007\');">接受</a> &nbsp;<a class="dispose2" order="2" onclick="authHelper.messageReply.omitContact(this, \'uiop0007\');">忽略</a>',deal:'0'},
+				{msg:'<a href="/userView/uiop0007">uiop0005</a> 想邀请您作为联系人。', btn:'<a class="dispose1" order="3" onclick="authHelper.messageReply.receiveContact(this, \'uiop0007\');">接受</a> &nbsp;<a class="dispose2" order="3" onclick="authHelper.messageReply.omitContact(this, \'uiop0007\');">忽略</a>',deal:'0'},
+				{msg:'<a href="/userView/uiop0007">uiop0004</a> 想邀请您加入组 <a href="#">语言交流</a> 。', btn:'<a class="dispose1" order="4" onclick="authHelper.messageReply.receiveContact(this, \'uiop0007\');">接受</a> &nbsp;<a class="dispose2" order="4" onclick="authHelper.messageReply.omitContact(this, \'uiop0007\');">忽略</a>',deal:'0'},
+				{msg:'<a href="/userView/uiop0007">uiop0003</a> 给您分享了文档 <a href="#">一天学会抽...</a> 。', btn:'<a class="dispose1" order="5" onclick="authHelper.messageReply.receiveContact(this, \'uiop0007\');">接受</a> &nbsp;<a class="dispose2" order="5" onclick="authHelper.messageReply.omitContact(this, \'uiop0007\');">忽略</a>',deal:'0'}
+				];
+					
+				var msgTitle = $('#msgTitle');
+				var msgContent = $('#msgContent');
+				var bottomBtn = $('#bottomBtn');
+				var msgID = 1;
+				
+				function loadMessage(){
+					if(data != null){
+						newMessage.removeClass('hide');
+						if(data[0]<6){
+							preInit();
+							develop.click(function(){
+								if(!isDevelop){
+									developInit();
+									bottomBtn.removeClass('hide');
+									bottomBtnInit();
+									isDevelop = true;
+								}
+								else {
+									newMessage.removeClass('msgDevelop');
+									bottomBtn.addClass('hide');
+									for(var i = 1; i< data.length; i++){
+										if(data[i].deal != true){
+											msgID = i;
+											break;
+										}
+										else if(i == data.length-1){
+											newMessage.addClass('hide');
+										}
+									}
+									preInit();
+									isDevelop = false;
+								}
+							});
+						}
+						else {
+							developInit();
+							$('#developIcon').addClass('fui-cross');
+							$('#viewAll').removeClass('hide');
+							develop.click(function(){
+								newMessage.addClass('hide');
+							});
+						}
+					}
+				}
+				function developInit(){
+					newMessage.addClass('msgDevelop');
+					changeMsgTitle2(data[0]);
+					developShow();
+					$('.dispose1').each(function(index, element) {
+                        $(this).click(dispose1Btn);
+						$(this).click(developRefresh);
+                    });
+					$('.dispose2').each(function(index, element) {
+                        $(this).click(dispose2Btn);
+						$(this).click(developRefresh);
+                    });
+				}
+				function preInit(){
+					changeMsgTitle(msgID,data[0]);
+					msgContent.html(data[msgID].msg+" &nbsp; &nbsp; &nbsp; "+data[msgID].btn);
+					$('.dispose1').click(function(){
+						var THIS = this;
+						dispose1Btn(THIS);
+						nextMessage();
+                    });
+					$('.dispose2').click(function(){
+						var THIS = this;
+						dispose2Btn(THIS);
+						nextMessage();
+                    });
+				}
+				function nextMessage(){
+					msgID++;
+					if(msgID<data.length){
+						if(data[msgID].deal != true){
+							preInit();
+						}
+						else {
+							nextMessage();
+						}
+					}
+					else {
+						newMessage.addClass('hide');
+					}
+				}
+				function dispose1Btn(THIS){
+					var id =  $(THIS).attr('order');
+					if(id == undefined){
+						id = $(this).attr('order');
+					}
+					data[id].btn = '<span class="greencolor">（已接受）</span>';
+					data[id].deal = true;
+					
+				}
+				function dispose2Btn(THIS){
+					var id =  $(THIS).attr('order');
+					if(id == undefined){
+						id = $(this).attr('order');
+					}
+					data[id].btn = '<span class="redcolor">（已忽略）</span>';
+					data[id].deal = true;
+				}
+				function changeMsgTitle(id,total){
+					var title = "新消息"+id+"/"+total;
+					msgTitle.html(title);
+				}
+				function changeMsgTitle2(total){
+					var title = "您有"+total+"条新消息";
+					msgTitle.html(title);
+				}
+				function developShow(){
+					var content = "";
+					for(var i = 1; i< data.length; i++){
+						content += '<span id="msg'+i+'"></span><span class="pull-right" id="btn'+i+'"></span><br>';
+					}
+					msgContent.html(content);
+					for(var i = 1; i< data.length; i++){
+						$("#msg"+i).html(data[i].msg);
+						$("#btn"+i).html(data[i].btn);
+					}
+				}
+				function developRefresh(){
+					var id = $(this).attr('order');
+					$("#btn"+id).html(data[id].btn);
+				}
+				function bottomBtnInit(){
+					$('#allExcept').click(function(){
+						$('.dispose1').each(function(){
+							$(this).click();
+						});
+					});
+					$('#allLgnore').click(function(){
+						$('.dispose2').each(function(){
+							console.log(this);
+							$(this).click();
+						});
+					});
+					$('#closePanel').click(function(){
+						newMessage.addClass('hide');
+					});
+				}
+				
+				loadMessage();
 				
 				
 				

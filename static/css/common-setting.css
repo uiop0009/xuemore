@@ -85,10 +85,16 @@ body {
 	color: #FFF;
 }
 
+a.hoverLine:hover {
+	text-decoration: underline;
+}
 
-
-
-
+.greencolor {
+	color: #6CF;
+}
+.redcolor {
+	color: #C33;
+}
 
 
 
