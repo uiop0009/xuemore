@@ -16,10 +16,9 @@
 }
 
 #banner {
-	background-color: #48c9b0;
-	margin-bottom: 38px;
-	padding-top: 30px;
-	padding-bottom: 32px;
+	margin-bottom: 26px;
+	background-image: url(../../pic/userbanner.jpg);
+	height: 170px;
 }
 
 .navbar-defind {
@@ -84,7 +83,7 @@ li.active>a {
 }
 
 #docSearch {
-	margin-top: 25px;
+	margin-top: 12px;
 	margin-bottom: 25px;
 }
 .searchFrame {
@@ -294,19 +293,109 @@ li.active>a {
 	border-color: #21a78d;
 }
 
+.myDoc {
+	margin-bottom: 50px;
+}
+
+.bannerText {
+	display: table-cell;
+	vertical-align: middle;
+	height: 170px;
+}
+
+.userID {
+	color: #FFF;
+	font-size: 40px;
+	margin-bottom: 0;
+}
+
+.salutatory {
+	color: #FFF;
+}
+
+.messageContainer {
+	position: relative;
+	width: 100%;
+	max-width: 600px;
+}
+
+#newMessage {
+	position: absolute;
+	margin-top: 10px;
+	padding: 4px 20px;
+	background-color: #FFF;
+	border: #bbb dashed 1px;
+	border-radius: 8px;
+	font-size: 15px;
+	width: 100%;
+	z-index: 100;
+}
+.newMessage {
+	transition: all 0.5s;
+	
+}
+.mailIcon {
+	font-size: 17px;
+}
+.newMessageTitle {
+	position: relative;
+	top: -2px;
+}
+.messageContent {
+	margin-top: 2px;
+}
+.messageContent a {
+	cursor: pointer;
+}
+.messageContent>a:hover {
+	text-decoration: underline;
+}
+.arrowhead {
+	margin-right: -5px;
+	transition: all 0.2s;
+}
+#develop {
+	color: #666;
+	cursor: pointer;
+}
+#develop:hover {
+	color: #16a085;
+}
+
+.msgDevelop {
+	
+	
+}
+.msgDevelop div.arrowhead {
+	transform: rotate(90deg);
+}
+.msgDevelop #msgContent {
+	text-align: left;
+	margin: 30px 60px 6px;
+}
 
 
-
-
-
-
-
-
-
-
-
-
-
+#bottomBtn{
+	margin: 10px 60px 5px;
+	border-top: #DDD dashed 1px;
+}
+.smallBtn {
+	font-size: 14px;
+}
+#viewAll {
+	display: block;
+	margin: 10px 60px 22px;
+	background-color: #b9efe4;
+	border-radius: 4px;
+	text-align: center;
+	color: #FFF;
+}
+#viewAll:hover {
+	background-color: #7ed7c6;
+}
+#viewAll:active {
+	background-color: #30b49a;
+}
 
 
 .standard-grey {
