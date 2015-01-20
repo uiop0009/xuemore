@@ -1,103 +1,34 @@
 @charset "utf-8";
 /* CSS Document */
 
-.dispace-1 {
-	padding-left: 5%;
-	padding-right: 5%;
-}
-.dispace-2 {
-	padding-left: 8%;
-	padding-right: 8%;
-}
-
-#header {
-	background-color: #737373;
-	line-height: 40px;
-}
-
 #banner {
 	margin-bottom: 26px;
 	background-image: url(../../pic/userbanner.jpg);
 	height: 170px;
 }
 
-.navbar-defind {
-	margin-bottom: 0;
-	min-height: 60px;
-}
-
-.navbar-brand-defind {
-	float: left;
-	line-height: 60px;
-	margin-right: 40px;
-	font-size: 23px;
-	color: #737373;
-}
-#send {
-	font-size: 38px;
-	position: absolute;
-	
-	margin-top: 10px;
-}
-#logotitle {
-	margin-left: 54px;
-	
-}
-.mainOption>li>a {
-	line-height: 60px;
-	padding: 0 21px;
-	font-size: 18px;
-	font-weight: 100;
-	
-}
-li.active {
-	background-color: #48c9b0;
-	
-}
-li.active>a {
-	color: #FFF;
-}
-
-
-#searchform {
-	padding: 12px 0;
-}
-
-#searchBox, #searchBtn {
-	border-radius: 20px;
-	font-family: inherit;
-}
-#searchBox {
-	border-top-right-radius: 0;
-	border-bottom-right-radius: 0;
-}
-#searchBtn {
-	border-top-left-radius: 0;
-	border-bottom-left-radius: 0;
-}
-
 .column-title {
-	font-size: 32px;
+	font-size: 28px;
 	color: #FFF;
-	letter-spacing: 7px;
+	letter-spacing: 5px;
 }
 
 #docSearch {
-	margin-top: 12px;
+	margin-top: 14px;
 	margin-bottom: 25px;
 }
 .searchFrame {
 	border-color: #48c9b0;
 	font-family: inherit;
+	height: 39px;
 }
 .btn-whiteframe {
 	background-color: #48c9b0;
-	border: #FFF solid 1px;
 	color: #FFF;
 	border-radius: 5px;
-	height: 38px;
+	height: 39px;
 	padding: 8px 32px;
-	margin-top: 2px;
+	margin-top: 0px;
 }
 .btn-whiteframe:hover {
 	background-color: #9cddd0;
@@ -107,7 +38,7 @@ li.active>a {
 }
 
 .docTitle {
-	font-size: 21px;
+	font-size: 19px;
 	margin-bottom: 5px;
 }
 .docTitle a {
@@ -149,6 +80,7 @@ li.active>a {
 	margin-top: 12px;
 	margin-bottom: 10px;
 	height: auto;
+	font-size: 14px;
 }
 
 .row-fluid {
@@ -199,7 +131,7 @@ li.active>a {
 	margin-bottom: 30px;
 }
 .groupBtn {
-	height: 42px;
+	height: 39px;
 	padding: 10px 22px;
 }
 
@@ -208,7 +140,7 @@ li.active>a {
 }
 
 .doclink {
-	font-size: 15px;
+	font-size: 14px;
 	position: relative;
 	top: -7px;
 }
@@ -246,9 +178,9 @@ li.active>a {
 
 .myPPT {
 	background-color: #48c99a;
-	padding: 15px 25px 25px;
+	padding: 13px 25px 24px;
 	min-width: 260px;
-	margin-top: 9px;
+	margin-top: 11px;
 }
 #mypptTitle {
 	font-size: 26px;
@@ -334,6 +266,10 @@ li.active>a {
 	transition: all 0.5s;
 	
 }
+.suonaIcon {
+	font-size: 18px;
+	margin-top: 4px;
+}
 .mailIcon {
 	font-size: 17px;
 }
@@ -362,10 +298,6 @@ li.active>a {
 	color: #16a085;
 }
 
-.msgDevelop {
-	
-	
-}
 .msgDevelop div.arrowhead {
 	transform: rotate(90deg);
 }
@@ -373,7 +305,6 @@ li.active>a {
 	text-align: left;
 	margin: 30px 60px 6px;
 }
-
 
 #bottomBtn{
 	margin: 10px 60px 5px;
@@ -396,7 +327,6 @@ li.active>a {
 #viewAll:active {
 	background-color: #30b49a;
 }
-
 
 .standard-grey {
 	color: #737373;

@@ -1,0 +1,128 @@
+@charset "utf-8";
+/* CSS Document */
+
+#welcome {
+	font-size: 18px;
+	color: #48c9b0;
+	font-weight: 900;
+	letter-spacing: 3px;
+	margin-left: 3px;
+}
+#introduce {
+	font-size: 15px;
+	color: #FFF;
+}
+.notice {
+	margin-right: 22px;
+}
+.notice span {
+	font-size: 18px;
+	top: 3px;
+	color: #48c9b0;
+}
+.notice:hover span {
+	color: #FFF;
+}
+.notice:active span {
+	color: #489e8d;
+}
+#noticeNum {
+	font-size: 17px;
+	position: relative;
+	top: 1px;
+	left: -1px;
+	color: #F06;
+}
+.userinfo {
+	margin-top: -1px;
+	margin-right: 5px;
+}
+.userIcon {
+	color: #48c9b0;
+	padding: 5px;
+	border: #48c9b0 solid 2px;
+	border-radius: 30px;
+}
+.userdropdown {
+	min-width: 140px;
+	background-color: #34495e;
+	margin-top: 3px;
+}
+.userdropdown>li>a {
+	color: #FFF;
+}
+.userdropdown>li>a:hover {
+	background-color: #16a085;
+	color: #FFF;
+}
+.dispace-1 {
+	padding-left: 5%;
+	padding-right: 5%;
+}
+.dispace-2 {
+	padding-left: 8%;
+	padding-right: 8%;
+}
+#header {
+	background-color: #737373;
+	line-height: 40px;
+}
+.navbar-defind {
+	margin-bottom: 0;
+	min-height: 60px;
+}
+.navbar-brand-defind {
+	float: left;
+	line-height: 60px;
+	margin-right: 40px;
+	font-size: 23px;
+	color: #737373;
+}
+#send {
+	font-size: 38px;
+	position: absolute;
+	margin-top: 10px;
+}
+#logotitle {
+	margin-left: 54px;
+}
+.mainOption>li>a {
+	line-height: 60px;
+	padding: 0 21px;
+	font-size: 18px;
+	font-weight: 100;
+}
+li.active {
+	background-color: #48c9b0;
+}
+li.active>a {
+	color: #FFF;
+}
+#searchform {
+	padding: 12px 0;
+}
+#searchBox, #searchBtn {
+	border-radius: 20px;
+	font-family: inherit;
+}
+#searchBox {
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+#searchBtn {
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+.bodyBackground {
+	
+	padding: 20px 0 550px;
+}
+.drawShadow {
+	position: relative;
+	z-index: 2;
+	box-shadow: #EEE 0 1px 1px;
+}
+
+
+
