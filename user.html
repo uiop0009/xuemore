@@ -10,6 +10,7 @@
 	<link href="static/flat-ui-dist/css/flat-ui.min.css" rel="stylesheet">
     
     <link href="static/css/common-setting.css" rel="stylesheet">
+    <link href="static/css/insidePageSetting.css" rel="stylesheet">
     <link href="static/css/user.css" rel="stylesheet">
 </head>
 
@@ -19,13 +20,15 @@
         	<span id="welcome">欢迎来到连星</span>&nbsp;&nbsp;
             <span id="introduce">实时互动教学网站</span>
             <div class="btn-group detailGroup pull-right userinfo">
-            	<a data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user userIcon"></span></a>
+            	<a data-toggle="dropdown" href="#"><img src="pic/user.png"></a>
                 <ul role="menu" class="dropdown-menu userdropdown">
                 	<li><a href="#"><span class="fui-user"></span> uiop0009</a></li>
                     <li><a href="#"><span class="fui-gear"></span> 账号设置</a></li>
                     <li><a href="#"><span class="fui-exit"></span> 退出</a></li>
                 </ul>
             </div>
+            <a class="pull-right notice" href="/user/messages"><span class="glyphicon glyphicon-bullhorn"></span> <span id="noticeNum">&nbsp;&nbsp;</span></a>
+            
         </div>   
     </div>
     <!--主菜单-->
@@ -37,12 +40,11 @@
             </div>
             <div class="collapse navbar-collapse" id="mainMenu">
             	<ul class="nav navbar-nav mainOption">
-                	<li class="grey active"><a href="/user">我</a></li>
+                	<li class="active"><a class="grey" href="/user">&nbsp; 我 &nbsp;</a></li>
                     <li><a class="grey" href="/user/contacts">联系人</a></li>
                     <li><a class="grey" href="/user/userGroups">小组</a></li>
                     <li><a class="grey" href="/user/pads">文档</a></li>
                     <li><a class="grey" href="/user/slides">幻灯片</a></li>
-                    <li><a class="grey" href="/user/messages">消息</a></li>
                 </ul>
                 <form class="navbar-form navbar-right" id="searchform" action="#" role="search">
                 	<div class="form-group">
@@ -63,7 +65,7 @@
         	<!--消息窗-->
             <div class="center messageContainer">
             <div id="newMessage" class="newMessage hide">
-            	<div class="pull-left"><span class="fui-mail mailIcon"></span> <span class="newMessageTitle" id="msgTitle"></span></div>
+            	<div class="pull-left"><span class="glyphicon glyphicon-bullhorn suonaIcon"></span> <span class="newMessageTitle" id="msgTitle"></span></div>
                 <div class="pull-right arrowhead"><a id="develop"><span id="developIcon" class="fui-arrow-right mailIcon"></span></a></div>
                 <div class="text-center messageContent" id="msgContent">
                 	
@@ -358,11 +360,13 @@
 				var msgTitle = $('#msgTitle');
 				var msgContent = $('#msgContent');
 				var bottomBtn = $('#bottomBtn');
+				var noticeNum = $('#noticeNum');
 				var msgID = 1;
-				
+								
 				function loadMessage(){
 					if(data != null){
 						newMessage.removeClass('hide');
+						noticeNum.html(data[0]);
 						if(data[0]<6){
 							preInit();
 							develop.click(function(){
@@ -382,6 +386,7 @@
 										}
 										else if(i == data.length-1){
 											newMessage.addClass('hide');
+											noticeNum.html('&nbsp;&nbsp;');
 										}
 									}
 									preInit();
@@ -438,6 +443,7 @@
 					}
 					else {
 						newMessage.addClass('hide');
+						noticeNum.html('&nbsp;&nbsp;');
 					}
 				}
 				function dispose1Btn(THIS){
@@ -458,11 +464,11 @@
 					data[id].deal = true;
 				}
 				function changeMsgTitle(id,total){
-					var title = "新消息"+id+"/"+total;
+					var title = "新通知"+id+"/"+total;
 					msgTitle.html(title);
 				}
 				function changeMsgTitle2(total){
-					var title = "您有"+total+"条新消息";
+					var title = "您有"+total+"条新通知";
 					msgTitle.html(title);
 				}
 				function developShow(){
@@ -494,6 +500,7 @@
 					});
 					$('#closePanel').click(function(){
 						newMessage.addClass('hide');
+						noticeNum.html('&nbsp;&nbsp;');
 					});
 				}
 				

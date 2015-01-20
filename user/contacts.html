@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+<head>
+	<title data-l10n-id="home.serverName">连星</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="shortcut icon" href="/favicon.ico">
+    
+    <link href="../static/bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../static/flat-ui-dist/css/flat-ui.min.css" rel="stylesheet">
+    
+    <link href="../static/css/common-setting.css" rel="stylesheet">
+    <link href="../static/css/insidePageSetting.css" rel="stylesheet">
+    <link href="../static/css/contacts.css" rel="stylesheet">
+</head>
+
+<body>
+	<div id="header">
+    	<div class="container dispace-1">
+        	<span id="welcome">欢迎来到连星</span>&nbsp;&nbsp;
+            <span id="introduce">实时互动教学网站</span>
+            <div class="btn-group detailGroup pull-right userinfo">
+            	<a data-toggle="dropdown" href="#"><img src="../pic/user.png"></a>
+                <ul role="menu" class="dropdown-menu userdropdown">
+                	<li><a href="#"><span class="fui-user"></span> uiop0009</a></li>
+                    <li><a href="#"><span class="fui-gear"></span> 账号设置</a></li>
+                    <li><a href="#"><span class="fui-exit"></span> 退出</a></li>
+                </ul>
+            </div>
+            <a class="pull-right notice" href="/user/messages"><span class="glyphicon glyphicon-bullhorn"></span> <span id="noticeNum">&nbsp;&nbsp;</span></a>
+            
+        </div>   
+    </div>
+    <!--主菜单-->
+    <div class="drawShadow">
+    <div class="container dispace-1">
+    	<nav class="navbar navbar-defind" role="navigation">
+        	<div class="navbar-header">
+            	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainMenu"></button>
+                <a class="navbar-brand-defind" href="/user"><span class="glyphicon glyphicon-send" id="send"></span><span id="logotitle">连 星</span></a>
+            </div>
+            <div class="collapse navbar-collapse" id="mainMenu">
+            	<ul class="nav navbar-nav mainOption">
+                	<li><a class="grey" href="/user">&nbsp; 我 &nbsp;</a></li>
+                    <li class="active"><a class="grey" href="/user/contacts">联系人</a></li>
+                    <li><a class="grey" href="/user/userGroups">小组</a></li>
+                    <li><a class="grey" href="/user/pads">文档</a></li>
+                    <li><a class="grey" href="/user/slides">幻灯片</a></li>
+                </ul>
+                <form class="navbar-form navbar-right" id="searchform" action="#" role="search">
+                	<div class="form-group">
+                    	<div class="input-group">
+                        	<input class="form-control" id="searchBox" type="search" placeholder="用户/小组">
+                            <span class="input-group-btn">
+                            	<button type="submit" class="btn" id="searchBtn"><span class="fui-search"></span></button>
+                            </span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </nav>
+    </div>
+    </div>
+    
+    <div class="bodyBackground">
+    	
+        
+        
+        
+        
+        
+        
+    </div>
+    
+    
+    
+    
+    <div class="footer noMarginTop">
+    	<a href="#"><span class="glyphicon glyphicon-send"></span> 连星 @ Copyright by www.hepea.net</a>
+    </div>
+    
+    <script type="text/javascript" src="../static/js/promise.js"></script>
+	<script type="text/javascript" src="../static/js/ajax.js"></script>
+	<script type="text/javascript" src="../static/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../static/flat-ui-dist/js/flat-ui.min.js"></script>
+    
+    <script type="text/javascript">
+		$(function(){
+			$('.input-group').on('focus', '.form-control', function () {
+      				$(this).closest('.input-group, .form-group').addClass('focus');
+    			}).on('blur', '.form-control', function () {
+      				$(this).closest('.input-group, .form-group').removeClass('focus');
+    			});
+			
+			$('.detailGroup').each(function(index, element) {
+                    $(this).hover(function(){
+							clearTimeout(window['t'+index]);
+							$(this).addClass('open');
+						},function(){
+							var $this = $(this);
+							window['t'+ index]=setTimeout(function(){$this.removeClass('open');},200);
+					});
+                });
+			
+			
+			
+			
+		});
+	</script>
+</body>
+</html>

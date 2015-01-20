@@ -45,45 +45,6 @@ body {
 	color: #76c948;
 }
 
-#welcome {
-	font-size: 18px;
-	color: #48c9b0;
-	font-weight: 900;
-	letter-spacing: 3px;
-	margin-left: 3px;
-}
-
-#introduce {
-	font-size: 15px;
-	color: #FFF;
-}
-
-.userinfo {
-	margin-top: 3px;
-	margin-right: 5px;
-}
-
-.userIcon {
-	color: #48c9b0;
-	padding: 5px;
-	border: #48c9b0 solid 2px;
-	border-radius: 30px;
-	
-}
-
-.userdropdown {
-	min-width: 140px;
-	background-color: #34495e;
-	margin-top: 3px;
-	
-}
-.userdropdown>li>a {
-	color: #FFF;
-}
-.userdropdown>li>a:hover {
-	background-color: #16a085;
-	color: #FFF;
-}
 
 a.hoverLine:hover {
 	text-decoration: underline;
@@ -95,9 +56,9 @@ a.hoverLine:hover {
 .redcolor {
 	color: #C33;
 }
-
-
-
+.noMarginTop {
+	margin-top: 0;
+}
 
 
 
