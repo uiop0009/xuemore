@@ -113,16 +113,17 @@ li.active>a {
 	border-top-left-radius: 0;
 	border-bottom-left-radius: 0;
 }
-
-.bodyBackground {
-	
-	padding: 20px 0 550px;
-}
 .drawShadow {
 	position: relative;
 	z-index: 2;
-	box-shadow: #EEE 0 1px 1px;
+	box-shadow: #E9E9E9 0 1px 1px;
 }
-
+.standard-title {
+	font-size: 26px;
+	letter-spacing: 3px;
+	color: #737373;
+	margin-top: 34px;
+	margin-bottom: 20px;
+}
 
 

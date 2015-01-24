@@ -56,8 +56,11 @@ a.hoverLine:hover {
 .redcolor {
 	color: #C33;
 }
-.noMarginTop {
+.rePosition {
 	margin-top: 0;
+	position: absolute;
+	width: 100%;
+	bottom: 0;
 }
 
 

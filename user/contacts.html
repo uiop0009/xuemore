@@ -62,20 +62,23 @@
     </div>
     </div>
     
-    <div class="bodyBackground">
-    	
-        
-        
-        
-        
-        
+    <div class="container dispace-2">
+    	<p class="standard-title">我的联系人(<span id="contactsNum">0</span>)</p>
+        <div id="contactsArea">
+        	
+        </div>
+        <div class="center" id="pagechange">
+        	<a class="fui-arrow-left" id="prebtn"></a>
+            <div id="pagebtn"></div>
+            <a class="fui-arrow-right" id="nextbtn"></a>
+        </div>
         
     </div>
     
     
     
     
-    <div class="footer noMarginTop">
+    <div class="footer">
     	<a href="#"><span class="glyphicon glyphicon-send"></span> 连星 @ Copyright by www.hepea.net</a>
     </div>
     
@@ -101,6 +104,188 @@
 							window['t'+ index]=setTimeout(function(){$this.removeClass('open');},200);
 					});
                 });
+			
+			var contactsArea = $('#contactsArea');
+			var pagebtn = $('#pagebtn');
+			var lastclick = ' ';
+			var curclick = ' ';
+			var curN = 1; //当前播放的分页
+			var newBtnGroup = '<div class="btnModule hide"><img src="../pic/sendmessage.png" class="sendmessage" title="发消息"> <img src="../pic/addgroup.png" class="addgroup" title="邀请加入组"> <img src="../pic/adddoc.png" class="adddoc" title="共享文档"></div>';
+			
+			var data = [78,
+			{imgurl: '../pic/42423565342424.png',contactid:'uiop0009',contactname:'小飞机',profile:'顽皮的小淘气'},
+			{contactid:'hiearth',contactname:'黑光',profile:'我爱编程我爱编程我爱编程我...'},
+			{contactid:'uiop0008',contactname:'烽火戏诸侯',profile:'从没有真正的无敌，有的只是...'},
+			{contactid:'uiop0007',contactname:'桃园侠客',profile:'你说的话我不信，我说的话你...'},
+			{imgurl: '../pic/42423565342424.png',contactid:'uiop0009',contactname:'小飞机',profile:'顽皮的小淘气'},
+			{contactid:'hiearth',contactname:'黑光',profile:'我爱编程我爱编程我爱编程我...'},
+			{contactid:'uiop0008',contactname:'烽火戏诸侯',profile:'从没有真正的无敌，有的只是...'},
+			{contactid:'uiop0007',contactname:'桃园侠客',profile:'你说的话我不信，我说的话你...'},{imgurl: '../pic/42423565342424.png',contactid:'uiop0009',contactname:'机器大厦',profile:'顽皮的小淘气'},
+			{contactid:'earth',contactname:'就要火辣辣',profile:'古今多少事，都付笑谈中！'},
+			{contactid:'uiop0008',contactname:'黑屏手机',profile:'从没有真正的无敌，有的只是...'},
+			{contactid:'uiop0007',contactname:'桃园侠客',profile:'你说的话我不信，我说的话你...'},{imgurl: '../pic/42423565342424.png',contactid:'uiop0009',contactname:'小飞机',profile:'顽皮的小淘气'},
+			{contactid:'hiearth',contactname:'从前又从前',profile:'我爱编程我爱编程我爱编程我...'},
+			{contactid:'uiop0008',contactname:'紫色罗兰',profile:'从没有真正的无敌，有的只是...'},
+			{contactid:'uiop0007',contactname:'桃园侠客',profile:'你说的话我不信，我说的话你...'},{imgurl: '../pic/42423565342424.png',contactid:'uiop0009',contactname:'果然没跑',profile:'顽皮的小淘气'},
+			{contactid:'hiearth',contactname:'黑光',profile:'我爱编程我爱编程我爱编程我...'},
+			{contactid:'uiop0008',contactname:'烽火戏诸侯',profile:'从没有真正的无敌，有的只是...'},
+			{contactid:'uiop0007',contactname:'桃园侠客',profile:'你说的话我不信，我说的话你...'},{imgurl: '../pic/42423565342424.png',contactid:'uiop0009',contactname:'看不见的影子',profile:'顽皮的小淘气'},
+			{contactid:'hiearth',contactname:'黑光',profile:'我爱编程我爱编程我爱编程我...'},
+			{contactid:'uiop0008',contactname:'断电不好',profile:'从没有真正的无敌，有的只是...'},
+			{contactid:'uiop0007',contactname:'桃园侠客',profile:'你说的话我不信，我说的话你...'},{imgurl: '../pic/42423565342424.png',contactid:'uiop0009',contactname:'小飞机',profile:'顽皮的小淘气'},
+			{contactid:'hiearth',contactname:'依然幽梦',profile:'我爱编程我爱编程我爱编程我...'},
+			{contactid:'uiop0008',contactname:'烽火戏诸侯',profile:'从没有真正的无敌，有的只是...'},
+			{contactid:'uiop0007',contactname:'哩哩啦啦',profile:'你说的话我不信，我说的话你...'},{imgurl: '../pic/42423565342424.png',contactid:'uiop0009',contactname:'小飞机',profile:'顽皮的小淘气'},
+			{contactid:'hiearth',contactname:'像风一样奔跑',profile:'我爱编程我爱编程我爱编程我...'},
+			{contactid:'uiop0008',contactname:'烽火戏诸侯',profile:'从没有真正的无敌，有的只是...'},
+			{contactid:'uiop0007',contactname:'桃园侠客',profile:'你说的话我不信，我说的话你...'},{imgurl: '../pic/42423565342424.png',contactid:'uiop0009',contactname:'小飞机',profile:'顽皮的小淘气'},
+			{contactid:'hiearth',contactname:'黑光',profile:'我爱编程我爱编程我爱编程我...'},
+			{contactid:'uiop0008',contactname:'烽火戏诸侯',profile:'从没有真正的无敌，有的只是...'},
+			{contactid:'uiop0007',contactname:'淡淡哭',profile:'你说的话我不信，我说的话你...'},{imgurl: '../pic/42423565342424.png',contactid:'uiop0009',contactname:'小飞机',profile:'顽皮的小淘气'},
+			{contactid:'hiearth',contactname:'轻唤吾名',profile:'我爱编程我爱编程我爱编程我...'},
+			{contactid:'uiop0008',contactname:'烽火戏诸侯',profile:'从没有真正的无敌，有的只是...'},
+			{contactid:'uiop0007',contactname:'闪烁小星',profile:'你说的话我不信，我说的话你...'},{imgurl: '../pic/42423565342424.png',contactid:'uiop0009',contactname:'小飞机',profile:'顽皮的小淘气'},
+			{contactid:'hiearth',contactname:'黑光',profile:'我爱编程我爱编程我爱编程我...'},
+			{contactid:'uiop0008',contactname:'何以为人',profile:'从没有真正的无敌，有的只是...'},
+			{contactid:'uiop0007',contactname:'桃园侠客',profile:'你说的话我不信，我说的话你...'},{imgurl: '../pic/42423565342424.png',contactid:'uiop0009',contactname:'小飞机',profile:'顽皮的小淘气'},
+			{contactid:'hiearth',contactname:'黑光',profile:'我爱编程我爱编程我爱编程我...'},
+			{contactid:'uiop0008',contactname:'烽火戏诸侯',profile:'从没有真正的无敌，有的只是...'},
+			{contactid:'uiop0007',contactname:'桃园侠客',profile:'你说的话我不信，我说的话你...'},{imgurl: '../pic/42423565342424.png',contactid:'uiop0009',contactname:'小飞机',profile:'顽皮的小淘气'},
+			{contactid:'hiearth',contactname:'黑光',profile:'我爱编程我爱编程我爱编程我...'},
+			{contactid:'uiop0008',contactname:'怎么没怎么',profile:'从没有真正的无敌，有的只是...'},
+			{contactid:'uiop0007',contactname:'桃园侠客',profile:'你说的话我不信，我说的话你...'},{imgurl: '../pic/42423565342424.png',contactid:'uiop0009',contactname:'小飞机',profile:'顽皮的小淘气'},
+			{contactid:'hiearth',contactname:'多米诺',profile:'我爱编程我爱编程我爱编程我...'},
+			{contactid:'uiop0008',contactname:'烽火戏诸侯',profile:'从没有真正的无敌，有的只是...'},
+			{contactid:'uiop0007',contactname:'桃园侠客',profile:'你说的话我不信，我说的话你...'},{imgurl: '../pic/42423565342424.png',contactid:'uiop0009',contactname:'小飞机',profile:'顽皮的小淘气'},
+			{contactid:'hiearth',contactname:'浪花摇啊摇',profile:'我爱编程我爱编程我爱编程我...'},
+			{contactid:'uiop0008',contactname:'烽火戏诸侯',profile:'从没有真正的无敌，有的只是...'},
+			{contactid:'uiop0007',contactname:'选择恐惧症',profile:'你说的话我不信，我说的话你...'},{imgurl: '../pic/42423565342424.png',contactid:'uiop0009',contactname:'小飞机',profile:'顽皮的小淘气'},
+			{contactid:'hiearth',contactname:'黑光',profile:'我爱编程我爱编程我爱编程我...'},
+			{contactid:'uiop0008',contactname:'烽火戏诸侯',profile:'从没有真正的无敌，有的只是...'},
+			{contactid:'uiop0007',contactname:'桃园侠客',profile:'你说的话我不信，我说的话你...'},{imgurl: '../pic/42423565342424.png',contactid:'uiop0009',contactname:'我和我的梦',profile:'顽皮的小淘气'},
+			{contactid:'hiearth',contactname:'黑光',profile:'我爱编程我爱编程我爱编程我...'},
+			{contactid:'uiop0008',contactname:'烽火戏诸侯',profile:'从没有真正的无敌，有的只是...'},
+			{contactid:'uiop0007',contactname:'桃园侠客',profile:'你说的话我不信，我说的话你...'},{imgurl: '../pic/42423565342424.png',contactid:'uiop0009',contactname:'小飞机',profile:'顽皮的小淘气'},
+			{contactid:'hiearth',contactname:'黑光',profile:'我爱编程我爱编程我爱编程我...'},
+			{contactid:'uiop0008',contactname:'烽火戏诸侯',profile:'从没有真正的无敌，有的只是...'},
+			{contactid:'uiop0007',contactname:'桃园侠客',profile:'你说的话我不信，我说的话你...'},
+			{contactid:'uiop0007',contactname:'桃园侠客',profile:'你说的话我不信，我说的话你...'},{imgurl: '../pic/42423565342424.png',contactid:'uiop0009',contactname:'小飞机',profile:'顽皮的小淘气'},
+			{contactid:'hiearth',contactname:'黑光',profile:'我爱编程我爱编程我爱编程我...'},
+			{contactid:'uiop0008',contactname:'烽火戏诸侯',profile:'从没有真正的无敌，有的只是...'},
+			{contactid:'uiop0007',contactname:'桃园侠客',profile:'你说的话我不信，我说的话你...'},
+			{imgurl: '../pic/42423565342424.png',contactid:'uiop0009',contactname:'小飞机',profile:'顽皮的小淘气'}
+			];
+			
+			var datalength = data.length;
+			$('#contactsNum').html(data[0]);
+			
+			paging();
+			
+			function resizeWindow(){
+				if($(window).width() >= 975){
+					contactsArea.html('<div class="cell3-left"><div class="cellContent"></div></div><div class="cell3-middle"><div class="cellContent"></div></div><div class="cell3-right"><div class="cellContent"></div></div>');
+				}
+				else if($(window).width() >= 565) {
+					contactsArea.html('<div class="cell2-left"><div class="cellContent"></div></div><div class="cell2-right"><div class="cellContent"></div></div>');
+				}
+				else {
+					contactsArea.html('<div class="cell1"><div class="cellContent"></div></div>');
+				}
+				contactsShow();
+			}
+			resizeWindow();
+			$(window).resize(resizeWindow);
+			
+			
+			function paging(){//分页
+				var contactnum = datalength-1;
+				var pagenum = Math.ceil(contactnum/24);
+				var htmltext = '';
+				for(n = 1; n <= pagenum; n++){
+					htmltext += '<a id="pagebtn'+n+'"></a>';
+					window['pageArray'+n] = [];
+					var arr = window['pageArray'+n];
+					for(i = 1; i < 25; i++){
+						var id = 24*(n-1)+i;
+						if(id < datalength){
+							arr.push(id);
+						}
+						else {
+							break;
+						}
+					}
+				}
+				pagebtn.html(htmltext);
+				for(n = 1; n <= pagenum; n++){
+					$('#pagebtn'+n).click({id: n},pagebtnclick);
+				}
+				$('#prebtn').click(function(){
+					var btnid = (curN-1)>0 ? (curN-1) : pagenum;
+					$('#pagebtn'+btnid).click();
+				});
+				$('#nextbtn').click(function(){
+					var btnid = (curN+1)<=pagenum ? (curN+1) : 1;
+					$('#pagebtn'+btnid).click();
+				});
+				$('#pagebtn1').click();
+			}
+			
+			function pagebtnclick(e){
+				lastclick = curclick;
+				curclick = this;
+				curN = e.data.id;
+				if(curclick != lastclick){
+					$(lastclick).removeClass('active');
+					$(this).addClass('active');
+					contactsShow();
+				}
+			}
+			function contactsShow(){ //分页展示刷新
+				var arr = window['pageArray'+curN];
+				var cellContent = $('.cellContent');
+				var cyclength = cellContent.length;
+				var cycid = 0;
+				cellContent.each(function(){
+					$(this).html('');
+				});
+				$.each(arr,function(n,value){
+					var imgurl = data[value].imgurl ?  data[value].imgurl : '../pic/userlg.png';
+					var htmltext = $(cellContent[cycid]).html();
+					htmltext += '<div contactid="'+data[value].contactid+'" class="contactdiv"><img src="'+imgurl+'" class="headportrait pull-left"><p class="nickname">'+data[value].contactname+'</p><p class="profile">'+data[value].profile+'</p>'+newBtnGroup+'</div>';
+					$(cellContent[cycid]).html(htmltext);
+					if(++cycid >= cyclength){
+						cycid = 0;
+					}
+				});
+				addhref();
+			}
+			function addhref(){//附上链接
+				$('.contactdiv').each(function(index, element) {
+                    var This = $(this);
+					
+					This.hover(function(){
+						This.children('.btnModule').removeClass('hide');
+					},function(){
+						This.children('.btnModule').addClass('hide');
+					});
+					This.children('.nickname').click(function(){
+						var target = '/userView/'+This.attr('contactid');
+						window.open(target);
+					});
+					This.children().children('.sendmessage').click(function(){
+						console.log(This.attr('contactid'));
+						
+					});
+					This.children().children('.addgroup').click(function(){
+						console.log(This.attr('contactid'));
+					});
+					This.children().children('.adddoc').click(function(){
+						console.log(This.attr('contactid'));
+					});
+                });
+			}
+			
+			
 			
 			
 			
