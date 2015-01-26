@@ -28,9 +28,6 @@
 	margin-bottom: 12px;
 	
 }
-.contactdiv:hover {
-	background-color: #F1F1F1;
-}
 
 #pagechange {
 	margin-top: 20px;
@@ -99,16 +96,16 @@
 	margin-bottom: 0;
 }
 .btnModule {
-	background-color: #48c9b0;
 	position: absolute;
 	height: 51px;
-	margin-top: -51px;
+	margin-top: -54px;
 	margin-left: 163px;
 	padding: 10px;
+	padding-top: 0;
 }
 .btnModule>img {
 	cursor: pointer;
-	opacity: 0.6;
+	opacity: 0.7;
 }
 .btnModule>img:hover {
 	opacity: 1;
