@@ -16,17 +16,14 @@
 	display: table-cell;
 	text-align: right;
 }
-
 .cellContent {
 	display: inline-table;
 	text-align: left;
-	
-	width: 236px;
+	width: 246px;
 	min-height: 352px;
 }
 .contactdiv {
 	margin-bottom: 12px;
-	
 }
 
 #pagechange {

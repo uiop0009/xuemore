@@ -1,0 +1,286 @@
+<!doctype html>
+<html>
+<head>
+	<title data-l10n-id="home.serverName">连星</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="shortcut icon" href="/favicon.ico">
+    
+    <link href="static/bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="static/flat-ui-dist/css/flat-ui.min.css" rel="stylesheet">
+    
+    <link href="static/css/common-setting.css" rel="stylesheet">
+    <link href="static/css/insidePageSetting.css" rel="stylesheet">
+    <link href="static/css/userview.css" rel="stylesheet">
+</head>
+
+<body>
+	<div id="header">
+    	<div class="container dispace-1">
+        	<span id="welcome">欢迎来到连星</span>&nbsp;&nbsp;
+            <span id="introduce">实时互动教学网站</span>
+            <div class="btn-group detailGroup pull-right userinfo">
+            	<a data-toggle="dropdown" href="#"><img src="pic/user.png"></a>
+                <ul role="menu" class="dropdown-menu userdropdown">
+                	<li><a href="#"><span class="fui-user"></span> uiop0009</a></li>
+                    <li><a href="#"><span class="fui-gear"></span> 账号设置</a></li>
+                    <li><a href="#"><span class="fui-exit"></span> 退出</a></li>
+                </ul>
+            </div>
+            <a class="pull-right notice" href="/user/messages" title="通知"><span class="glyphicon glyphicon-bullhorn"></span> <span id="noticeNum">&nbsp;&nbsp;</span></a>
+            
+        </div>   
+    </div>
+    <!--主菜单-->
+    <div class="drawShadow">
+    <div class="container dispace-1">
+    	<nav class="navbar navbar-defind" role="navigation">
+        	<div class="navbar-header">
+            	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainMenu"></button>
+                <a class="navbar-brand-defind" href="/user"><span class="glyphicon glyphicon-send" id="send"></span><span id="logotitle">连 星</span></a>
+            </div>
+            <div class="collapse navbar-collapse" id="mainMenu">
+            	<ul class="nav navbar-nav mainOption">
+                	<li><a class="grey" href="/user">&nbsp; 我 &nbsp;</a></li>
+                    <li class="active"><a class="grey" href="/user/contacts">联系人</a></li>
+                    <li><a class="grey" href="/user/userGroups">小组</a></li>
+                    <li><a class="grey" href="/user/pads">文档</a></li>
+                    <li><a class="grey" href="/user/slides">幻灯片</a></li>
+                </ul>
+                <form class="navbar-form navbar-right" id="searchform" action="#" role="search">
+                	<div class="form-group">
+                    	<div class="input-group">
+                        	<input class="form-control" id="searchBox" type="search" placeholder="用户/小组">
+                            <span class="input-group-btn">
+                            	<button type="submit" class="btn" id="searchBtn"><span class="fui-search"></span></button>
+                            </span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </nav>
+    </div>
+    </div>
+    
+    <div class="container dispace-2" id="contentArea">
+    	<p class="standard-title" id="userviewtitle">用户详情</p>
+        <div class="row">
+        	<div class="col-sm-3 text-center" id="userLinkArea">
+            	<img src="pic/userlger.png"><br>
+                <p id="username">狐疑的猪</p><br>
+                <div class="">
+                <p><button class="btn btn-primary"><img src="pic/sendmessage.png"> &nbsp; 发送消息</button></p>
+                <p><button class="btn btn-primary" id="adddocbtn"><img src="pic/adddoc.png"> &nbsp; &nbsp;分享文档</button></p>
+                <p><button class="btn btn-primary" id="addgroupbtn"><img src="pic/addgroup.png"> &nbsp; 邀请加入组</button></p>
+                </div>
+                <div class="hide">
+                	<button class="btn btn-primary"><span class="fui-user"></span> &nbsp; 加为联系人</button>
+                </div>
+            </div>
+            <div class="col-sm-9" id="userinfo">
+            	<div class="row">
+            		<div class="col-sm-3 col-xs-4">
+                    	<span class="boldtitle">个人简介：</span>
+                    </div>
+                    <div class="col-sm-9 col-xs-8">
+                    	寻寻觅觅找风口 总有飞起来的一天
+                    </div>
+                </div>
+                <div class="row">
+            		<div class="col-sm-3 col-xs-4">
+                    	<span class="boldtitle">是联系人：</span>
+                    </div>
+                    <div class="col-sm-9 col-xs-8">
+                    	是
+                    </div>
+                </div>
+                <div class="row">
+            		<div class="col-sm-3 col-xs-4">
+                    	<span class="boldtitle">共同所在的组：</span>
+                    </div>
+                    <div class="col-sm-9 col-xs-8">
+                    	<a href="#">蓝翔技校</a> &nbsp; <a href="#">贝壳</a> &nbsp; <a href="#">广场舞研究院</a> &nbsp; <a href="#">蓝翔技校</a> &nbsp; <a href="#">广场舞研究院</a> &nbsp; <a href="#">蓝翔技校</a> &nbsp; <a href="#">广场舞研究院</a> &nbsp; <a href="#">蓝翔技校</a> &nbsp; <a href="#">广场舞研究院</a> &nbsp; <a href="#">蓝翔技校</a> &nbsp; <a href="#">广场舞研究院</a> &nbsp; <a href="#">蓝翔技校</a> &nbsp; <a href="#">广场舞研究院</a> &nbsp; <a href="#">蓝翔技校</a> &nbsp; <a href="#">广场舞研究院</a> &nbsp; <a href="#">蓝翔技校</a> &nbsp; <a href="#">广场舞研究院</a> &nbsp; 
+                    </div>
+                </div>
+                <div class="row">
+            		<div class="col-sm-3 col-xs-4">
+                    	<span class="boldtitle">共有的文档：</span>
+                    </div>
+                    <div class="col-sm-9 col-xs-8">
+                    	<a href="#">魔方技巧</a> &nbsp; <a href="#">航模课程</a> &nbsp; <a href="#">英语角</a> &nbsp; <a href="#">厨艺养成</a> &nbsp; <a href="#">电子技术</a> &nbsp; <a href="#">西班牙菜系</a> &nbsp; <a href="#">魔方技巧</a> &nbsp; <a href="#">航模课程</a> &nbsp; <a href="#">英语角</a> &nbsp; <a href="#">厨艺养成</a> &nbsp; <a href="#">电子技术</a> &nbsp; <a href="#">西班牙菜系</a> &nbsp; <a href="#">魔方技巧</a> &nbsp; <a href="#">航模课程</a> &nbsp; <a href="#">英语角</a> &nbsp; <a href="#">厨艺养成</a> &nbsp; <a href="#">电子技术</a> &nbsp; <a href="#">西班牙菜系</a> &nbsp; <a href="#">魔方技巧</a> &nbsp; <a href="#">航模课程</a> &nbsp; <a href="#">英语角</a> &nbsp; <a href="#">厨艺养成</a> &nbsp; <a href="#">电子技术</a> &nbsp; <a href="#">西班牙菜系</a> &nbsp; <a href="#">魔方技巧</a> &nbsp; <a href="#">航模课程</a> &nbsp; <a href="#">英语角</a> &nbsp; <a href="#">厨艺养成</a> &nbsp; <a href="#">电子技术</a> &nbsp; <a href="#">西班牙菜系</a> &nbsp; <a href="#">魔方技巧</a> &nbsp; <a href="#">航模课程</a> &nbsp; <a href="#">英语角</a> &nbsp; <a href="#">厨艺养成</a> &nbsp; <a href="#">电子技术</a> &nbsp; <a href="#">西班牙菜系</a> &nbsp; <a href="#">魔方技巧</a> &nbsp; <a href="#">航模课程</a> &nbsp; <a href="#">英语角</a> &nbsp; <a href="#">厨艺养成</a> &nbsp; <a href="#">电子技术</a> &nbsp; <a href="#">西班牙菜系</a> &nbsp; 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="footer">
+    	<a href="#"><span class="glyphicon glyphicon-send"></span> 连星 @ Copyright by www.hepea.net</a>
+    </div>
+    <!--黑背景-->
+    <div id="blackBackground" class="hide">
+    </div>
+    <!--分享文档弹窗-->
+    <div id="adddocwindow" class="addwindow">
+        <p class="standard-title windowtitle">分享文档</p>
+        <div class="contentframe">
+        	<div class="row">
+        		<div class="col-sm-3 col-xs-5">
+            		<span class="boldtitle">分享对象：</span>
+            	</div>
+            	<div class="col-sm-9 col-xs-7">
+            		狐疑的猪
+            	</div>
+        	</div>
+        	<div class="row">
+        		<div class="col-sm-3 col-xs-5">
+            		<span class="boldtitle">可共享文档：</span>
+            	</div>
+            	<div class="col-sm-9 col-xs-7">
+            		<label class="checkbox mycheckbox" for="checkbox1">
+            			<input type="checkbox" id="checkbox1" data-toggle="checkbox">
+            			<span class="checkName">魔方技巧</span>
+          			</label> &nbsp; &nbsp; 
+                	<label class="checkbox mycheckbox" for="checkbox2">
+            			<input type="checkbox" id="checkbox2" data-toggle="checkbox">
+            			<span class="checkName">航模课程</span>
+          			</label> &nbsp; &nbsp; 
+                	<label class="checkbox mycheckbox" for="checkbox3">
+            			<input type="checkbox" id="checkbox3" data-toggle="checkbox">
+            			<span class="checkName">英语角</span>
+          			</label> &nbsp; &nbsp; 
+                	<label class="checkbox mycheckbox" for="checkbox4">
+            			<input type="checkbox" id="checkbox4" data-toggle="checkbox">
+            			<span class="checkName">厨艺养成</span>
+          			</label> &nbsp; &nbsp; 
+                	<label class="checkbox mycheckbox" for="checkbox5">
+            			<input type="checkbox" id="checkbox5" data-toggle="checkbox">
+            			<span class="checkName">电子技术</span>
+          			</label> &nbsp; &nbsp; 
+                	<label class="checkbox mycheckbox" for="checkbox6">
+            			<input type="checkbox" id="checkbox6" data-toggle="checkbox">
+            			<span class="checkName">西班牙及南欧那不勒斯菜系</span>
+          			</label> &nbsp; &nbsp; 
+            	</div>
+            </div>
+        </div>
+        <div id="closeadddoc" class="closebtn">
+            <span class="fui-cross"></span>
+        </div>
+        <button type="button" class="btn btn-primary" id="sharedocbtn">分享选中文档</button>
+    </div>
+    <!--邀请加组弹窗-->
+    <div id="addgroupwindow" class="addwindow">
+    	<p class="standard-title windowtitle">邀请加入组</p>
+        <div class="contentframe">
+        	<div class="row">
+        		<div class="col-sm-3 col-xs-5">
+            		<span class="boldtitle">邀请对象：</span>
+            	</div>
+            	<div class="col-sm-9 col-xs-7">
+            		狐疑的猪
+            	</div>
+        	</div>
+            <div class="row">
+        		<div class="col-sm-3 col-xs-5">
+            		<span class="boldtitle">可共享文档：</span>
+            	</div>
+            	<div class="col-sm-9 col-xs-7">
+            		<label class="checkbox mycheckbox" for="checkbox7">
+            			<input type="checkbox" id="checkbox7" data-toggle="checkbox">
+            			<span class="checkName">魔方爱好者</span>
+          			</label> &nbsp; &nbsp; 
+                	<label class="checkbox mycheckbox" for="checkbox8">
+            			<input type="checkbox" id="checkbox8" data-toggle="checkbox">
+            			<span class="checkName">航模专家组</span>
+          			</label> &nbsp; &nbsp; 
+                	<label class="checkbox mycheckbox" for="checkbox9">
+            			<input type="checkbox" id="checkbox9" data-toggle="checkbox">
+            			<span class="checkName">英语speaker</span>
+          			</label> &nbsp; &nbsp; 
+                	<label class="checkbox mycheckbox" for="checkbox10">
+            			<input type="checkbox" id="checkbox10" data-toggle="checkbox">
+            			<span class="checkName">厨师协会</span>
+          			</label> &nbsp; &nbsp; 
+                	<label class="checkbox mycheckbox" for="checkbox11">
+            			<input type="checkbox" id="checkbox11" data-toggle="checkbox">
+            			<span class="checkName">电子技术杂志</span>
+          			</label> &nbsp; &nbsp; 
+                	<label class="checkbox mycheckbox" for="checkbox12">
+            			<input type="checkbox" id="checkbox12" data-toggle="checkbox">
+            			<span class="checkName">西餐美食家</span>
+          			</label> &nbsp; &nbsp; 
+            	</div>
+            </div>
+        </div>
+        <div id="closeaddgroup" class="closebtn">
+            <span class="fui-cross"></span>
+        </div>
+        <button type="button" class="btn btn-primary" id="sharegroupbtn">邀请加入选中组</button>
+    </div>
+    
+    
+    <script type="text/javascript" src="static/js/promise.js"></script>
+	<script type="text/javascript" src="static/js/ajax.js"></script>
+	<script type="text/javascript" src="static/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="static/flat-ui-dist/js/flat-ui.min.js"></script>
+    <script type="text/javascript">
+		$(function(){
+			$('.input-group').on('focus', '.form-control', function () {
+      				$(this).closest('.input-group, .form-group').addClass('focus');
+    			}).on('blur', '.form-control', function () {
+      				$(this).closest('.input-group, .form-group').removeClass('focus');
+    		});
+			
+			$('.detailGroup').each(function(index, element) {
+                    $(this).hover(function(){
+							clearTimeout(window['t'+index]);
+							$(this).addClass('open');
+						},function(){
+							var $this = $(this);
+							window['t'+ index]=setTimeout(function(){$this.removeClass('open');},200);
+					});
+            });
+			
+			$('[data-toggle="checkbox"]').radiocheck();
+			
+			var blackBack = $('#blackBackground');
+			var adddocwindow = $('#adddocwindow');
+			var adddocbtn = $('#adddocbtn');
+			var closeadddoc = $('#closeadddoc');
+			var addgroupbtn = $('#addgroupbtn');
+			var addgroupwindow = $('#addgroupwindow');
+			var closeaddgroup = $('#closeaddgroup');
+			function backHeight(){
+				blackBack.css('height',$(document.body).height());
+			}
+			$(window).resize(backHeight);
+			
+			function init(){
+				adddocbtn.click(function(){
+					blackBack.removeClass('hide');
+					adddocwindow.css({'transform':'scale(1,1)'});
+				});
+				addgroupbtn.click(function(){
+					blackBack.removeClass('hide');
+					addgroupwindow.css({'transform':'scale(1,1)'});
+				});
+				closeadddoc.click(closewindow);
+				blackBack.click(closewindow);
+				closeaddgroup.click(closewindow);
+			}
+			init();
+			function closewindow(){
+				blackBack.addClass('hide');
+				adddocwindow.css({'transform':'scale(0,0)'});
+				addgroupwindow.css({'transform':'scale(0,0)'});
+			}
+			
+			
+			
+			
+		});
+	</script>
+</body>
+</html>

@@ -11,6 +11,7 @@
     
     <link href="../static/css/common-setting.css" rel="stylesheet">
     <link href="../static/css/insidePageSetting.css" rel="stylesheet">
+    <link href="../static/css/subfieldLayout.css" rel="stylesheet">
     <link href="../static/css/contacts.css" rel="stylesheet">
 </head>
 
@@ -27,7 +28,7 @@
                     <li><a href="#"><span class="fui-exit"></span> 退出</a></li>
                 </ul>
             </div>
-            <a class="pull-right notice" href="/user/messages"><span class="glyphicon glyphicon-bullhorn"></span> <span id="noticeNum">&nbsp;&nbsp;</span></a>
+            <a class="pull-right notice" href="/user/messages" title="通知"><span class="glyphicon glyphicon-bullhorn"></span> <span id="noticeNum">&nbsp;&nbsp;</span></a>
             
         </div>   
     </div>
@@ -110,7 +111,7 @@
 			var lastclick = ' ';
 			var curclick = ' ';
 			var curN = 1; //当前播放的分页
-			var newBtnGroup = '<div class="btnModule hide"><img src="../pic/sendmessage1.png" class="sendmessage" title="发消息"> <img src="../pic/addgroup1.png" class="addgroup" title="邀请加入组"> <img src="../pic/adddoc1.png" class="adddoc" title="共享文档"></div>';
+			var newBtnGroup = '<div class="btnModule hide"><img src="../pic/sendmessage1.png" class="sendmessage" title="发送消息"> <img src="../pic/addgroup1.png" class="addgroup" title="邀请加入组"> <img src="../pic/adddoc1.png" class="adddoc" title="共享文档"></div>';
 			
 			var data = [78,
 			{imgurl: '../pic/42423565342424.png',contactid:'uiop0009',contactname:'小飞机',profile:'顽皮的小淘气'},
@@ -185,7 +186,7 @@
 				if($(window).width() >= 975){
 					contactsArea.html('<div class="cell3-left"><div class="cellContent"></div></div><div class="cell3-middle"><div class="cellContent"></div></div><div class="cell3-right"><div class="cellContent"></div></div>');
 				}
-				else if($(window).width() >= 565) {
+				else if($(window).width() >= 570) {
 					contactsArea.html('<div class="cell2-left"><div class="cellContent"></div></div><div class="cell2-right"><div class="cellContent"></div></div>');
 				}
 				else {
