@@ -252,7 +252,7 @@
 				$.each(arr,function(n,value){
 					var imgurl = data[value].imgurl ?  data[value].imgurl : '../pic/userlg.png';
 					var htmltext = $(cellContent[cycid]).html();
-					htmltext += '<div contactid="'+data[value].contactid+'" class="contactdiv"><img src="'+imgurl+'" class="headportrait pull-left"><p class="nickname">'+data[value].contactname+'</p><p class="profile">'+data[value].profile+'</p>'+newBtnGroup+'</div>';
+					htmltext += '<div contactid="'+data[value].contactid+'" class="listItem"><img src="'+imgurl+'" class="headportrait pull-left"><p class="itemTitle">'+data[value].contactname+'</p><p class="profile">'+data[value].profile+'</p>'+newBtnGroup+'</div>';
 					$(cellContent[cycid]).html(htmltext);
 					if(++cycid >= cyclength){
 						cycid = 0;
@@ -261,7 +261,7 @@
 				addhref();
 			}
 			function addhref(){//附上链接
-				$('.contactdiv').each(function(index, element) {
+				$('.listItem').each(function(index, element) {
                     var This = $(this);
 					
 					This.hover(function(){
@@ -269,7 +269,7 @@
 					},function(){
 						This.children('.btnModule').addClass('hide');
 					});
-					This.children('.nickname').click(function(){
+					This.children('.itemTitle').click(function(){
 						var target = '/userView/'+This.attr('contactid');
 						window.open(target);
 					});

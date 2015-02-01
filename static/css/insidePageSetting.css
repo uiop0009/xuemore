@@ -125,5 +125,74 @@ li.active>a {
 	margin-top: 34px;
 	margin-bottom: 20px;
 }
-
-
+#blackBackground {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.5);
+	top: 0;
+	z-index: 2;
+}
+.addwindow {
+	width: 70%;
+	height: 567px;
+	background-color: #FFF;
+	position: absolute;
+	top: 10%;
+	left: 15%;
+	z-index: 10;
+	padding: 0px 45px 30px;
+	font-size: 15px;
+	transition: all 0.2s;
+	transform: scale(0,0);
+}
+.addwindow .windowtitle {
+	margin-top: 30px;
+}
+.addwindow .mycheckbox {
+	margin-top: 3px;
+	display: inline-block;
+}
+.addwindow .checkName {
+	margin-left: -5px;
+	position: relative;
+	top: -1px;
+	font-size: 15px;
+}
+.addwindow .checkbox+.checkbox {
+ margin-top: 0px;
+}
+.addwindow .closebtn {
+	position: absolute;
+	top: 15px;
+	right: 25px;
+	font-size: 25px;
+	color: #CCC;
+	transition: all 0.3s;
+	cursor: pointer;
+}
+.addwindow .closebtn:hover {
+	transform: rotateZ(90deg);
+}
+.addwindow .closebtn:active {
+	color: #555;
+}
+.addwindow .confirmBtn {
+	position: absolute;
+	bottom: 40px;
+	right: 45px;
+	min-width: 130px;
+}
+.addwindow .contentframe {
+	width: 100%;
+	height: 360px;
+	max-height: 80%;
+	padding: 0px 15px 10px 0;
+	overflow: auto;
+}
+.addwindow .row {
+	margin-bottom: 20px;
+}
+.boldtitle {
+	font-weight: bold;
+}

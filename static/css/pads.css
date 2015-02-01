@@ -1,0 +1,30 @@
+@charset "utf-8";
+/* CSS Document */
+
+.itempic {
+	margin-right: 19px;
+	margin-top: 8px;
+}
+.addshare {
+	position: absolute;
+	height: 51px;
+	margin-top: -50px;
+	margin-left: 180px;
+	padding: 10px;
+	padding-top: 0;
+	font-size: 14px;
+}
+.addshare>span>span {
+	display: inline-block;
+	margin-right: 3px;
+	font-size: 13px;
+}
+.addshare>span {
+	cursor: pointer;
+}
+.addshare>span:hover {
+	color: #48c9b0;
+}
+.addshare>span:active {
+	color: #27a68d;
+}
