@@ -64,7 +64,17 @@
     </div>
     
     <div class="container dispace-2">
-    	<p class="standard-title">我的文档(<span id="padsNum">0</span>)</p>
+    	<div class="row">
+        	<div class="col-sm-8 col-xs-7">
+    			<p class="standard-title">我的文档(<span id="padsNum">0</span>)</p>
+            </div>
+            <div class="col-sm-4 col-xs-5">
+            	<div class="pull-right" id="addnewdoc">
+                	<input type="text" placeholder="文档标题" class="form-control inputnameframe" id="inputdoctitle">
+                    <button class="btn btn-newdoc" type="button" id="inputnewdoc">新文档</button>
+                </div>
+            </div>
+        </div>
         <div id="contactsArea">
         	
         </div>
@@ -305,6 +315,8 @@
 			var doctitle = $('#doctitle');
 			var groupAim = $('#groupAim');
 			var contactAim  = $('#contactAim');
+			var inputnewdoc = $('#inputnewdoc');
+			var inputdoctitle = $('#inputdoctitle');
 			
 			
 			function newWindowInit(){
