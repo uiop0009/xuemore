@@ -1,0 +1,65 @@
+@charset "utf-8";
+/* CSS Document */
+
+.itempic {
+	margin-right: 19px;
+	margin-top: 8px;
+}
+.addshare {
+	position: absolute;
+	height: 51px;
+	margin-top: -50px;
+	margin-left: 180px;
+	padding: 10px;
+	padding-top: 0;
+	font-size: 14px;
+}
+.addshare>span>span {
+	display: inline-block;
+	margin-right: 3px;
+	font-size: 13px;
+}
+.addshare>span {
+	cursor: pointer;
+}
+.addshare>span:hover {
+	color: #48c9b0;
+}
+.addshare>span:active {
+	color: #27a68d;
+}
+#addnewdoc {
+	margin-top: 45px;
+	width: 223px;
+}
+.inputnameframe, .btn-newdoc {
+	border-radius: 4px;
+	height: 27px;
+	font-size: 13px;
+}
+.inputnameframe {
+	border: #CCC 1px solid;
+	font-family: inherit;
+	width: 150px;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+	display: inline-block;
+	margin-right: -6px;
+}
+.btn-newdoc {
+	background-color: #48c9b0;
+	color: #FFF;
+	padding: 1px 17px;
+	margin-top: 0px;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+	position: relative;
+	top: -1px;
+}
+.btn-newdoc:hover {
+	background-color: #9cddd0;
+}
+.btn-newdoc:active {
+	background-color: #1db396;
+}
+
