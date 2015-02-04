@@ -4,27 +4,27 @@
 #contentArea {
 	min-height: 503px;
 }
-#userviewtitle {
+#detailTitle {
 	margin-bottom: 28px;
 }
-#username {
+#detailName {
 	font-size: 22px;
 	color: #737373;
 	letter-spacing: 1px;
 }
-#userLinkArea {
+#detailLinkArea {
 	margin-bottom: 50px;
 }
-#userLinkArea button {
+#detailLinkArea button {
 	padding: 6px 11px;
 }
-#userinfo {
+#detailInfo {
 	font-size: 15px;
 }
-#userinfo>.row {
+#detailInfo>.row {
 	margin-bottom: 20px;
 }
-#userinfo a:hover {
+#detailInfo a:hover {
 	text-decoration: underline;
 }
 

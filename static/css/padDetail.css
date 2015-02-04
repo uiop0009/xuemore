@@ -1,0 +1,59 @@
+@charset "utf-8";
+/* CSS Document */
+
+.padDetailName {
+	margin-top: 6px;
+}
+
+#addsharebtn {
+	width: 111px;
+	padding: 
+}
+
+#changeDocTitle {
+	width: 226px;
+	height: 24px;
+	border-width: 1px;
+	border-radius: 4px;
+	font-size: 14px;
+	font-family: inherit;
+}
+#IconSetArea {
+	margin-top: 30px;
+}
+.iconOption {
+	text-align: center;
+	font-size: 13px;
+	cursor: pointer;
+	margin-right: 20px;
+}
+.iconOption:hover .iconOptionImg{
+	border-color: #7ad7c5;
+}
+.iconOptionImg {
+	border: #DDD solid 1px;
+	border-radius: 5px;
+	padding: 7px 7px;
+	margin-bottom: 4px;
+}
+.iconActive {
+	color: #2fac94;
+}
+.iconActive>.iconOptionImg {
+	border-color: #2fac94;
+}
+.userDefinedImg {
+	border: #DDD dashed 1px;
+}
+.activeIcon {
+	position: absolute;
+	margin-top: 55px;
+	margin-left: 61px;
+	font-size: 18px;
+}
+#userDefinedIcon:active {
+	opacity: 0.5;
+}
+#sharegroupbtn {
+	letter-spacing: 3px;
+}
