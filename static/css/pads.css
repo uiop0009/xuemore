@@ -62,4 +62,9 @@
 .btn-newdoc:active {
 	background-color: #1db396;
 }
+.creatTab {
+	position: relative;
+	margin-left: 8px;
+	top: -2px;
+}
 

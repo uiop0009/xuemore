@@ -164,15 +164,15 @@
 			var blackBack = $('#blackBackground');
 			var data = [17,
 			{imgurl: '../pic/paddefaultpic01.png',padid:'r6U39tuI947DENou',padname:'项目报告',profile:'1421329220580'},
-			{imgurl: '../pic/paddefaultpic02.png',padid:'vbCqAP7IQQxI5OJH',padname:'写作技巧',profile:'1421238105598'},
+			{imgurl: '../pic/paddefaultpic02.png',padid:'vbCqAP7IQQxI5OJH',padname:'写作技巧',profile:'1421238105598',creator:'1'},
 			{imgurl: '../pic/paddefaultpic03.png',padid:'DqNU14WfcmwokdJ1',padname:'中国历史纪年',profile:'1419492639515'},
 			{imgurl: '../pic/xiangqi.png',padid:'e15CVnZYasU546OP',padname:'象棋残谱',profile:'1419489471649'},
 			{imgurl: '../pic/piano.png',padid:'l2N1CMfAq6F3QJdK',padname:'钢琴十二级',profile:'1413803302964'},
-			{imgurl: '../pic/kite.png',padid:'r6U39tuI947DENou',padname:'风筝怎么做',profile:' 1422703500509'},
+			{imgurl: '../pic/kite.png',padid:'r6U39tuI947DENou',padname:'风筝怎么做',profile:' 1422703500509',creator:'1'},
 			{imgurl: '../pic/paddefaultpic01.png',padid:'r6U39tuI947DENou',padname:'项目报告',profile:'1421329220580'},
 			{imgurl: '../pic/paddefaultpic02.png',padid:'r6U39tuI947DENou',padname:'写作技巧',profile:'1421238105598'},
 			{imgurl: '../pic/paddefaultpic03.png',padid:'r6U39tuI947DENou',padname:'中国历史纪年',profile:'1419492639515'},
-			{imgurl: '../pic/xiangqi.png',padid:'r6U39tuI947DENou',padname:'象棋残谱',profile:'1419489471649'},
+			{imgurl: '../pic/xiangqi.png',padid:'r6U39tuI947DENou',padname:'象棋残谱',profile:'1419489471649',creator:'1'},
 			{imgurl: '../pic/piano.png',padid:'r6U39tuI947DENou',padname:'钢琴十二级',profile:'1422703511161'},
 			{imgurl: '../pic/kite.png',padid:'r6U39tuI947DENou',padname:'风筝怎么做',profile:'1421238105598'},
 			{imgurl: '../pic/paddefaultpic01.png',padid:'r6U39tuI947DENou',padname:'项目报告',profile:'1421329220580'},
@@ -260,7 +260,12 @@
 					var imgurl = data[value].imgurl;
 					var htmltext = $(cellContent[cycid]).html();
 					var difftime = diffTime(date,data[value].profile);
-					htmltext += '<div padid="'+data[value].padid+'" class="listItem"><img src="'+imgurl+'" class="itempic pull-left"><p class="itemTitle">'+data[value].padname+'</p><p class="profile">最近更新：'+difftime+'</p>'+newBtnGroup+'</div>';
+					if(data[value].creator) {
+						htmltext += '<div padid="'+data[value].padid+'" class="listItem"><img src="'+imgurl+'" class="itempic pull-left"><p class="itemTitle">'+data[value].padname+'<img src="../pic/docCreatorTab.png" class="creatTab"></p><p class="profile">最近更新：'+difftime+'</p>'+newBtnGroup+'</div>';
+					}
+					else {
+						htmltext += '<div padid="'+data[value].padid+'" class="listItem"><img src="'+imgurl+'" class="itempic pull-left"><p class="itemTitle">'+data[value].padname+'</p><p class="profile">最近更新：'+difftime+'</p>'+newBtnGroup+'</div>';
+					}
 					$(cellContent[cycid]).html(htmltext);
 					if(++cycid >= cyclength){
 						cycid = 0;

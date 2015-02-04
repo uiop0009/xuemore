@@ -1,0 +1,315 @@
+<!doctype html>
+<html>
+<head>
+	<title data-l10n-id="home.serverName">连星</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="shortcut icon" href="/favicon.ico">
+    
+    <link href="static/bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="static/flat-ui-dist/css/flat-ui.min.css" rel="stylesheet">
+    
+    <link href="static/css/common-setting.css" rel="stylesheet">
+    <link href="static/css/insidePageSetting.css" rel="stylesheet">
+    <link href="static/css/detailPageSet.css" rel="stylesheet">
+    <link href="static/css/padDetail.css" rel="stylesheet">
+</head>
+
+<body>
+	<div id="header">
+    	<div class="container dispace-1">
+        	<span id="welcome">欢迎来到连星</span>&nbsp;&nbsp;
+            <span id="introduce">实时互动教学网站</span>
+            <div class="btn-group detailGroup pull-right userinfo">
+            	<a data-toggle="dropdown" href="#"><img src="pic/user.png"></a>
+                <ul role="menu" class="dropdown-menu userdropdown">
+                	<li><a href="#"><span class="fui-user"></span> uiop0009</a></li>
+                    <li><a href="#"><span class="fui-gear"></span> 账号设置</a></li>
+                    <li><a href="#"><span class="fui-exit"></span> 退出</a></li>
+                </ul>
+            </div>
+            <a class="pull-right notice" href="/user/messages" title="通知"><span class="glyphicon glyphicon-bullhorn"></span> <span id="noticeNum">&nbsp;&nbsp;</span></a>
+            
+        </div>   
+    </div>
+    <!--主菜单-->
+    <div class="drawShadow">
+    <div class="container dispace-1">
+    	<nav class="navbar navbar-defind" role="navigation">
+        	<div class="navbar-header">
+            	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainMenu"></button>
+                <a class="navbar-brand-defind" href="/user"><span class="glyphicon glyphicon-send" id="send"></span><span id="logotitle">连 星</span></a>
+            </div>
+            <div class="collapse navbar-collapse" id="mainMenu">
+            	<ul class="nav navbar-nav mainOption">
+                	<li><a class="grey" href="/user">&nbsp; 我 &nbsp;</a></li>
+                    <li><a class="grey" href="/user/contacts">联系人</a></li>
+                    <li><a class="grey" href="/user/userGroups">小组</a></li>
+                    <li class="active"><a class="grey" href="/user/pads">文档</a></li>
+                    <li><a class="grey" href="/user/slides">幻灯片</a></li>
+                </ul>
+                <form class="navbar-form navbar-right" id="searchform" action="#" role="search">
+                	<div class="form-group">
+                    	<div class="input-group">
+                        	<input class="form-control" id="searchBox" type="search" placeholder="用户/小组">
+                            <span class="input-group-btn">
+                            	<button type="submit" class="btn" id="searchBtn"><span class="fui-search"></span></button>
+                            </span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </nav>
+    </div>
+    </div>
+    
+    <div class="container dispace-2" id="contentArea">
+    	<p class="standard-title" id="detailTitle">文档详情</p>
+        <div class="row">
+        	<div class="col-sm-3 text-center" id="detailLinkArea">
+            	<img src="pic/paddefaultpic03lg.png" width="70"><br>
+                <p id="detailName" class="padDetailName">项目报告</p><br>
+                <div class="">
+                	<p><button class="btn btn-primary" id="addsharebtn" padid="r6U39tuI947DENou"><span class="fui-plus"></span> &nbsp; &nbsp;分 享</button></p>
+                </div>
+                <div class="">
+                	<button class="btn btn-primary" id="docsetbtn" padid="r6U39tuI947DENou"><span class="fui-gear"></span> &nbsp; 文档设置</button>
+                </div>
+            </div>
+            <div class="col-sm-9" id="detailInfo">
+            	<div class="row">
+            		<div class="col-sm-3 col-xs-4">
+                    	<span class="boldtitle">最近更新：</span>
+                    </div>
+                    <div class="col-sm-9 col-xs-8">
+                    	3天前
+                    </div>
+                </div>
+                <div class="row">
+            		<div class="col-sm-3 col-xs-4">
+                    	<span class="boldtitle">已共享的组：</span>
+                    </div>
+                    <div class="col-sm-9 col-xs-8">
+                    	<a href="#">蓝翔技校</a> &nbsp; <a href="#">贝壳</a> &nbsp; <a href="#">广场舞研究院</a> &nbsp; <a href="#">蓝翔技校</a> &nbsp; <a href="#">广场舞研究院</a> &nbsp; <a href="#">蓝翔技校</a> &nbsp; <a href="#">广场舞研究院</a> &nbsp; <a href="#">蓝翔技校</a> &nbsp; <a href="#">广场舞研究院</a> &nbsp; <a href="#">蓝翔技校</a> &nbsp; <a href="#">广场舞研究院</a> &nbsp; <a href="#">蓝翔技校</a> &nbsp; <a href="#">广场舞研究院</a> &nbsp; <a href="#">蓝翔技校</a> &nbsp; <a href="#">广场舞研究院</a> &nbsp; <a href="#">蓝翔技校</a> &nbsp; <a href="#">广场舞研究院</a> &nbsp; 
+                    </div>
+                </div>
+                <div class="row">
+            		<div class="col-sm-3 col-xs-4">
+                    	<span class="boldtitle">已共享的联系人：</span>
+                    </div>
+                    <div class="col-sm-9 col-xs-8">
+                    	<a href="#">小飞机</a> &nbsp; <a href="#">哈哈</a> &nbsp; <a href="#">离离原上草</a> &nbsp; <a href="#">一岁一枯荣</a> &nbsp; <a href="#">野火烧不尽</a> &nbsp; <a href="#">春风吹又生</a> &nbsp; <a href="#">野草</a> &nbsp; <a href="#">小飞机</a> &nbsp; <a href="#">哈哈</a> &nbsp; <a href="#">离离原上草</a> &nbsp; <a href="#">一岁一枯荣</a> &nbsp; <a href="#">野火烧不尽</a> &nbsp; <a href="#">春风吹又生</a> &nbsp; <a href="#">野草</a> &nbsp; <a href="#">小飞机</a> &nbsp; <a href="#">哈哈</a> &nbsp; <a href="#">离离原上草</a> &nbsp; <a href="#">一岁一枯荣</a> &nbsp; <a href="#">野火烧不尽</a> &nbsp; <a href="#">春风吹又生</a> &nbsp; <a href="#">野草</a> &nbsp; <a href="#">小飞机</a> &nbsp; <a href="#">哈哈</a> &nbsp; <a href="#">离离原上草</a> &nbsp; <a href="#">一岁一枯荣</a> &nbsp; <a href="#">野火烧不尽</a> &nbsp; <a href="#">春风吹又生</a> &nbsp; <a href="#">野草</a> &nbsp; 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="footer">
+    	<a href="#"><span class="glyphicon glyphicon-send"></span> 连星 @ Copyright by www.hepea.net</a>
+    </div>
+    <!--黑背景-->
+    <div id="blackBackground" class="hide">
+    </div>
+    <!--分享文档弹窗-->
+    <div id="addsharewindow" class="addwindow">
+        <p class="standard-title windowtitle">分享文档</p>
+        <div class="contentframe">
+        	<div class="row">
+        		<div class="col-sm-3 col-xs-5">
+            		<span class="boldtitle">文档名：</span>
+            	</div>
+            	<div class="col-sm-9 col-xs-7">
+            		<span>项目报告</span>
+            	</div>
+        	</div>
+            <div class="row">
+        		<div class="col-sm-3 col-xs-5">
+            		<span class="boldtitle">可共享的组：</span>
+            	</div>
+            	<div class="col-sm-9 col-xs-7" id="groupAim">
+            		
+            	</div>
+            </div>
+            <div class="row">
+        		<div class="col-sm-3 col-xs-5">
+            		<span class="boldtitle">可共享的联系人：</span>
+            	</div>
+            	<div class="col-sm-9 col-xs-7" id="contactAim">
+            		
+            	</div>
+            </div>
+            </div>
+        <div id="closeaddshare" class="closebtn">
+            <span class="fui-cross"></span>
+        </div>
+        <button type="button" class="btn btn-primary confirmBtn" id="sharedocbtn">分 &nbsp; 享</button>
+    </div>
+    <!--文档设置弹窗-->
+    <div id="docSetting" class="addwindow">
+    	<p class="standard-title windowtitle">文档设置</p>
+        <div class="contentframe">
+        	<div class="row">
+        		<div class="col-sm-3 col-xs-5">
+            		<span class="boldtitle">文档名称：</span>
+            	</div>
+            	<div class="col-sm-9 col-xs-7">
+            		<input type="text" class="form-control" id="changeDocTitle" value="项目报告">
+            	</div>
+        	</div>
+            <div class="row" id="IconSetArea">
+        		<div class="col-sm-3 col-xs-5">
+            		<span class="boldtitle">文档图标：</span>
+            	</div>
+            	<div class="col-sm-9 col-xs-7" id="settingContent">
+            	</div>
+            </div>
+        </div>
+        <div id="closeDocSetting" class="closebtn">
+            <span class="fui-cross"></span>
+        </div>
+        <button type="button" class="btn btn-primary confirmBtn" id="sharegroupbtn">保存设置</button>
+    </div>
+    
+    
+    <script type="text/javascript" src="static/js/promise.js"></script>
+	<script type="text/javascript" src="static/js/ajax.js"></script>
+	<script type="text/javascript" src="static/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="static/flat-ui-dist/js/flat-ui.min.js"></script>
+    <script type="text/javascript">
+		$(function(){
+			$('.input-group').on('focus', '.form-control', function () {
+      				$(this).closest('.input-group, .form-group').addClass('focus');
+    			}).on('blur', '.form-control', function () {
+      				$(this).closest('.input-group, .form-group').removeClass('focus');
+    		});
+			
+			$('.detailGroup').each(function(index, element) {
+                    $(this).hover(function(){
+							clearTimeout(window['t'+index]);
+							$(this).addClass('open');
+						},function(){
+							var $this = $(this);
+							window['t'+ index]=setTimeout(function(){$this.removeClass('open');},200);
+					});
+            });
+			
+			
+			
+			var blackBack = $('#blackBackground');
+			var addsharewindow = $('#addsharewindow');
+			var addsharebtn = $('#addsharebtn');
+			var closeaddshare = $('#closeaddshare');
+			var sharedocbtn = $('#sharedocbtn');
+			var groupAim = $('#groupAim');
+			var contactAim = $('#contactAim');
+			var docSetting = $('#docSetting');
+			var docsetbtn = $('#docsetbtn');
+			var closeDocSetting = $('#closeDocSetting');
+			var settingContent = $('#settingContent');
+			
+			function backHeight(){
+				blackBack.css('height',$(document.body).height());
+			}
+			$(window).resize(backHeight);
+			
+			var lastActive;
+			var newActive;
+			function newWindowInit(){
+				addsharebtn.click(function(){
+					blackBack.removeClass('hide');
+					var THIS = this;
+					replaceWindow(THIS);
+					addsharewindow.css({'transform':'scale(1,1)'});
+				});
+                docsetbtn.click(function(){
+					blackBack.removeClass('hide');
+					var THIS = this;
+					replaceSetting(THIS);
+					docSetting.css({'transform':'scale(1,1)'});
+				});
+				closeaddshare.click(closewindow);
+				closeDocSetting.click(closewindow);
+				blackBack.click(closewindow);
+			}
+			newWindowInit();
+			function closewindow(){
+				blackBack.addClass('hide');
+				addsharewindow.css({'transform':'scale(0,0)'});
+				docSetting.css({'transform':'scale(0,0)'});
+			}
+			function replaceWindow(THIS){//分享按钮请求数据
+				
+				//此处需补充请求数据方法
+				changeContent();
+			}
+			var sharedata = [{type:'1',name:'太阳当空照',id:'7bVuYIwacOXU4jia'},
+			{type:'1',name:'蓝翔技校',id:'7bVuYIwacOXn2jia'},
+			{type:'1',name:'贝壳',id:'7bVuY8wa5OXU4jia'},
+			{type:'1',name:' 广场舞研究院',id:'7bVuYIoacOX57jia'},
+			{type:'1',name:' GGYY',id:'7bVuY8iacOX44jia'},
+			{type:'2',name:' 小飞机',id:'uiop0009'},
+			{type:'2',name:'离离原上草',id:'uiop0008'},
+			{type:'2',name:' 一岁一枯荣',id:'uiop0007'},
+			{type:'2',name:' 野火烧不尽',id:'uiop0006'},
+			{type:'2',name:' 春风吹又生',id:'uiop0005'},
+			{type:'2',name:' 野草',id:'uiop0004'}
+			];
+			
+			function changeContent(){
+				var htmltext1 = '';
+				var htmltext2 = '';
+				$.each(sharedata, function(n,obj){
+					if(obj.type == 1){
+						htmltext1 += '<label class="checkbox mycheckbox" for="'+obj.id+'"><input type="checkbox" id="'+obj.id+'" data-toggle="checkbox"><span class="checkName">'+obj.name+'</span></label> &nbsp; &nbsp; &nbsp; ';
+					}
+					else if(obj.type == 2){
+						htmltext2 += '<label class="checkbox mycheckbox" for="'+obj.id+'"><input type="checkbox" id="'+obj.id+'" data-toggle="checkbox"><span class="checkName">'+obj.name+'</span></label> &nbsp; &nbsp; ';
+					}
+				});
+				groupAim.html(htmltext1);
+				contactAim.html(htmltext2);
+				$('[data-toggle="checkbox"]').radiocheck();
+			}
+			
+			var defaultTail = '<div class="iconOption pull-left" id="userDefinedIcon"><img src="pic/plus.png" class="iconOptionImg userDefinedImg"><br>自定义</div>';
+			function replaceSetting(THIS){//设置按钮请求数据
+				//此处需补充请求数据方法
+				changeSettingContent();
+			}
+			var setdata = [{id:'默认图标',url:'pic/paddefaultpic03lg.png'},{id:'自定义图标1',url:'pic/kitelg.png',active:'1'},{id:'自定义图标2',url:'pic/kitelg2.png'}];
+			var activeID = 0;
+			function changeSettingContent(){
+				var htmltext = '';
+				$.each(setdata,function(n,obj){
+					htmltext += '<div class="iconOption pull-left iconOptionMember"><span class="fui-check-circle activeIcon hide"></span><img src="'+obj.url+'" class="iconOptionImg"><br>'+obj.id+'</div>';
+					if(obj.active){
+						activeID = n;
+					}
+				});
+				htmltext += defaultTail;
+				settingContent.html(htmltext);
+				
+				var iconOptMer = $('.iconOptionMember');
+				iconOptMer.each(function(index, element) {
+                    var This = $(this);
+					This.click(function(){
+						if(This != newActive) {
+							This.addClass('iconActive');
+							This.children('.activeIcon').removeClass('hide');
+							lastActive = newActive;
+							newActive = This;
+							if(lastActive){
+								lastActive.removeClass('iconActive');
+								lastActive.children('.activeIcon').addClass('hide');
+							}
+						}
+					});
+                });
+				iconOptMer[activeID].click();
+			}
+		});
+	</script>
+</body>
+</html>
