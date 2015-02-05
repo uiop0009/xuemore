@@ -12,7 +12,7 @@
     <link href="../static/css/insidePageSetting.css" rel="stylesheet">
     <link href="../static/css/subfieldLayout.css" rel="stylesheet">
     <link href="../static/css/padDetail.css" rel="stylesheet">
-    <link href="../static/css/pads.css" rel="stylesheet">
+    <link href="../static/css/userGroups.css" rel="stylesheet">
 </head>
 
 <body>
@@ -44,8 +44,8 @@
             	<ul class="nav navbar-nav mainOption">
                 	<li><a class="grey" href="/user">&nbsp; 我 &nbsp;</a></li>
                     <li><a class="grey" href="/user/contacts">联系人</a></li>
-                    <li><a class="grey" href="/user/userGroups">小组</a></li>
-                    <li class="active"><a class="grey" href="/user/pads">文档</a></li>
+                    <li class="active"><a class="grey" href="/user/userGroups">小组</a></li>
+                    <li><a class="grey" href="/user/pads">文档</a></li>
                     <li><a class="grey" href="/user/slides">幻灯片</a></li>
                 </ul>
                 <form class="navbar-form navbar-right" id="searchform" action="#" role="search">
@@ -66,12 +66,12 @@
     <div class="container dispace-2">
     	<div class="row">
         	<div class="col-sm-8 col-xs-7">
-    			<p class="standard-title">我的文档(<span id="padsNum">0</span>)</p>
+    			<p class="standard-title">我的组(<span id="groupsNum">0</span>)</p>
             </div>
             <div class="col-sm-4 col-xs-5">
             	<div class="pull-right" id="addnewItem">
-                	<input type="text" placeholder="文档标题" class="form-control inputnameframe" id="inputItemTitle">
-                    <button class="btn btn-newItem" type="button" id="inputnewItem">新文档</button>
+                	<input type="text" placeholder="组名" class="form-control inputnameframe" id="inputItemTitle">
+                    <button class="btn btn-newItem" type="button" id="inputnewItem">创建组</button>
                 </div>
             </div>
         </div>
@@ -96,47 +96,13 @@
     <!--黑背景-->
     <div id="blackBackground" class="hide">
     </div>
-    <!--分享文档弹窗-->
-    <div id="addsharewindow" class="addwindow">
-        <p class="standard-title windowtitle">分享文档</p>
-        <div class="contentframe">
-        	<div class="row">
-        		<div class="col-sm-3 col-xs-5">
-            		<span class="boldtitle">文档名：</span>
-            	</div>
-            	<div class="col-sm-9 col-xs-7">
-            		<span id="doctitle"></span>
-            	</div>
-        	</div>
-            <div class="row">
-        		<div class="col-sm-3 col-xs-5">
-            		<span class="boldtitle">可共享的组：</span>
-            	</div>
-            	<div class="col-sm-9 col-xs-7" id="groupAim">
-            		
-            	</div>
-            </div>
-            <div class="row">
-        		<div class="col-sm-3 col-xs-5">
-            		<span class="boldtitle">可共享的联系人：</span>
-            	</div>
-            	<div class="col-sm-9 col-xs-7" id="contactAim">
-            		
-            	</div>
-            </div>
-            </div>
-        <div id="closeaddshare" class="closebtn">
-            <span class="fui-cross"></span>
-        </div>
-        <button type="button" class="btn btn-primary confirmBtn" id="sharedocbtn">分 &nbsp; 享</button>
-    </div>
-    <!--创建文档弹窗-->
+    <!--创建组弹窗-->
     <div id="docSetting" class="addwindow">
-    	<p class="standard-title windowtitle">新建文档</p>
+    	<p class="standard-title windowtitle">创建新组</p>
         <div class="contentframe">
         	<div class="row">
         		<div class="col-sm-3 col-xs-5">
-            		<span class="boldtitle">文档名称：</span>
+            		<span class="boldtitle">组名：</span>
             	</div>
             	<div class="col-sm-9 col-xs-7">
             		<input type="text" class="form-control" id="changeDocTitle">
@@ -144,7 +110,7 @@
         	</div>
             <div class="row" id="IconSetArea">
         		<div class="col-sm-3 col-xs-5">
-            		<span class="boldtitle">文档图标：</span>
+            		<span class="boldtitle">组图标：</span>
             	</div>
             	<div class="col-sm-9 col-xs-7" id="settingContent">
             	</div>
@@ -153,7 +119,7 @@
         <div id="closeDocSetting" class="closebtn">
             <span class="fui-cross"></span>
         </div>
-        <button type="button" class="btn btn-primary confirmBtn" id="sharegroupbtn">创建文档</button>
+        <button type="button" class="btn btn-primary confirmBtn" id="sharegroupbtn">创建组</button>
     </div>
             
     
@@ -185,30 +151,20 @@
 			var lastclick = ' ';
 			var curclick = ' ';
 			var curN = 1; //当前播放的分页
-			var newBtnGroup = '<div class="addshare hide"><span class="addsharebtn"><span class="fui-plus"></span>分享</span></div>';
 			var blackBack = $('#blackBackground');
-			var data = [17,
-			{imgurl: '../pic/paddefaultpic01.png',padid:'r6U39tuI947DENou',padname:'项目报告',profile:'1421329220580'},
-			{imgurl: '../pic/paddefaultpic02.png',padid:'vbCqAP7IQQxI5OJH',padname:'写作技巧',profile:'1421238105598',creator:'1'},
-			{imgurl: '../pic/paddefaultpic03.png',padid:'DqNU14WfcmwokdJ1',padname:'中国历史纪年',profile:'1419492639515'},
-			{imgurl: '../pic/xiangqi.png',padid:'e15CVnZYasU546OP',padname:'象棋残谱',profile:'1419489471649'},
-			{imgurl: '../pic/piano.png',padid:'l2N1CMfAq6F3QJdK',padname:'钢琴十二级',profile:'1413803302964'},
-			{imgurl: '../pic/kite.png',padid:'r6U39tuI947DENou',padname:'风筝怎么做',profile:' 1422703500509',creator:'1'},
-			{imgurl: '../pic/paddefaultpic01.png',padid:'r6U39tuI947DENou',padname:'项目报告',profile:'1421329220580'},
-			{imgurl: '../pic/paddefaultpic02.png',padid:'r6U39tuI947DENou',padname:'写作技巧',profile:'1421238105598'},
-			{imgurl: '../pic/paddefaultpic03.png',padid:'r6U39tuI947DENou',padname:'中国历史纪年',profile:'1419492639515'},
-			{imgurl: '../pic/xiangqi.png',padid:'r6U39tuI947DENou',padname:'象棋残谱',profile:'1419489471649',creator:'1'},
-			{imgurl: '../pic/piano.png',padid:'r6U39tuI947DENou',padname:'钢琴十二级',profile:'1422703511161'},
-			{imgurl: '../pic/kite.png',padid:'r6U39tuI947DENou',padname:'风筝怎么做',profile:'1421238105598'},
-			{imgurl: '../pic/paddefaultpic01.png',padid:'r6U39tuI947DENou',padname:'项目报告',profile:'1421329220580'},
-			{imgurl: '../pic/paddefaultpic02.png',padid:'r6U39tuI947DENou',padname:'写作技巧',profile:'1421238105598'},
-			{imgurl: '../pic/paddefaultpic03.png',padid:'r6U39tuI947DENou',padname:'中国历史纪年',profile:'1419492639515'},
-			{imgurl: '../pic/xiangqi.png',padid:'r6U39tuI947DENou',padname:'象棋残谱',profile:' 1422703041509'},
-			{imgurl: '../pic/piano.png',padid:'r6U39tuI947DENou',padname:'钢琴十二级',profile:'1300803302964'}
+			var data = [8,
+			{imgurl: '../pic/lanxiang.png',groupid:'7bVuYIwacOXU4jia',groupname:'蓝翔技校',doc:'xiaofeiji',docid:'vbCqAP7IQQxI5OJH',creator:'1'},
+			{imgurl: '../pic/guangchangwu.png',groupid:'7bVuYIwacOXU4jia',groupname:'广场舞研究院',doc:'小苹果',docid:'vbCqAP7IQQxI5OJH'},
+			{groupid:'7bVuYIwacOXU4jia',groupname:'编程爱好者',doc:'java进阶高级...',docid:'vbCqAP7IQQxI5OJH'},
+			{groupid:'7bVuYIwacOXU4jia',groupname:'钢琴大师班',doc:'钢琴八级考试...',docid:'vbCqAP7IQQxI5OJH'},
+			{imgurl: '../pic/zuojiaxiehui.png',groupid:'7bVuYIwacOXU4jia',groupname:'作家协会',doc:'现代写作导论',docid:'vbCqAP7IQQxI5OJH',creator:'1'},
+			{groupid:'7bVuYIwacOXU4jia',groupname:'设计家',doc:'扁平化设计风...',docid:'vbCqAP7IQQxI5OJH'},
+			{imgurl: '../pic/chuyi.png',groupid:'7bVuYIwacOXU4jia',groupname:'厨艺坊',doc:'淮扬菜系推广',docid:'vbCqAP7IQQxI5OJH'},
+			{groupid:'7bVuYIwacOXU4jia',groupname:'剪刀石头布',doc:'猜拳胜率分析',docid:'vbCqAP7IQQxI5OJH'}
 			];
 			
 			var datalength = data.length;
-			$('#padsNum').html(data[0]);
+			$('#groupsNum').html(data[0]);
 			
 			paging();
 			
@@ -283,13 +239,16 @@
 				});
 				$.each(arr,function(n,value){
 					var imgurl = data[value].imgurl;
+					if(!imgurl){
+						imgurl = '../pic/groupdefaultpic.png';
+					}
 					var htmltext = $(cellContent[cycid]).html();
-					var difftime = diffTime(date,data[value].profile);
+					
 					if(data[value].creator) {
-						htmltext += '<div padid="'+data[value].padid+'" class="listItem"><img src="'+imgurl+'" class="itempic pull-left"><p class="itemTitle">'+data[value].padname+'<img src="../pic/docCreatorTab.png" class="creatTab"></p><p class="profile">最近更新：'+difftime+'</p>'+newBtnGroup+'</div>';
+						htmltext += '<div groupid="'+data[value].groupid+'" class="listItem"><img src="'+imgurl+'" class="itempic pull-left"><p class="itemTitle">'+data[value].groupname+'<img src="../pic/groupCreatorTab.png" class="creatTab"></p><p class="profile">最新添加文档：<a href="/userGroup/'+data[value].docid+'" target="_blank">'+data[value].doc+'</p></div>';
 					}
 					else {
-						htmltext += '<div padid="'+data[value].padid+'" class="listItem"><img src="'+imgurl+'" class="itempic pull-left"><p class="itemTitle">'+data[value].padname+'</p><p class="profile">最近更新：'+difftime+'</p>'+newBtnGroup+'</div>';
+						htmltext += '<div groupid="'+data[value].groupid+'" class="listItem"><img src="'+imgurl+'" class="itempic pull-left"><p class="itemTitle">'+data[value].groupname+'</p><p class="profile">最新添加文档：<a href="/userGroup/'+data[value].docid+'" target="_blank">'+data[value].doc+'</p></div>';
 					}
 					$(cellContent[cycid]).html(htmltext);
 					if(++cycid >= cyclength){
@@ -301,53 +260,16 @@
 			function addhref(){//附上链接
 				$('.listItem').each(function(index, element) {
                     var This = $(this);
-					
-					This.hover(function(){
-						This.children('.addshare').removeClass('hide');
-					},function(){
-						This.children('.addshare').addClass('hide');
-					});
 					This.children('.itemTitle').click(function(){
-						var target = '/padDetail/'+This.attr('padid');
+						var target = '/padDetail/'+This.attr('groupid');
 						window.open(target);
-					});
-					This.children().children('.addsharebtn').click(function(){
-						
-						
 					});
                 });
 			}
-			function diffTime(date1,date2){
-				var diff = date1-date2;
-				var years = Math.floor(diff/(365*24*3600*1000));
-				if(years > 0) {return years+"年前";}
-				else {
-					var days = Math.floor(diff/(24*3600*1000));
-					if(days > 0){return days+"天前";}
-					else {
-						var hours = Math.floor(diff/(3600*1000));
-						if(hours > 0) {return hours+"小时前";}
-						else {
-							var minutes = Math.floor(diff/(60*1000));
-							if(minutes > 0) {return minutes+"分钟前";}
-							else {return "刚刚";}
-						}
-					}
-				}
-			}
 			
 			
-			
-			var addsharewindow = $('#addsharewindow');
-			var addsharebtn = $('.addsharebtn');
-			var closeaddshare = $('#closeaddshare');
-			var sharedocbtn = $('#sharedocbtn');
-			var doctitle = $('#doctitle');
-			var groupAim = $('#groupAim');
-			var contactAim  = $('#contactAim');
 			var inputnewItem = $('#inputnewItem');
 			var inputItemTitle = $('#inputItemTitle');
-			
 			var docSetting = $('#docSetting');
 			var changeDocTitle = $('#changeDocTitle');
 			var closeDocSetting = $('#closeDocSetting');
@@ -356,66 +278,23 @@
 			var newActive;
 			
 			function newWindowInit(){
-				addsharebtn.each(function(index, element) {
-					$(this).click(function(){
-						blackBack.removeClass('hide');
-						var THIS = this;
-						replaceWindow(THIS);
-						addsharewindow.css({'transform':'scale(1,1)'});
-					});
-                });
 				inputnewItem.click(function(){
 					blackBack.removeClass('hide');
 					var THIS = this;
 					replaceSetting(THIS);
 					docSetting.css({'transform':'scale(1,1)'});
 				});
-				closeaddshare.click(closewindow);
 				closeDocSetting.click(closewindow);
 				blackBack.click(closewindow);
 			}
 			newWindowInit();
 			function closewindow(){
 				blackBack.addClass('hide');
-				addsharewindow.css({'transform':'scale(0,0)'});
 				docSetting.css({'transform':'scale(0,0)'});
-			}
-			function replaceWindow(THIS){
-				doctitle.html($(THIS).parent().prevAll('.itemTitle').html());
-				//此处需补充请求数据方法
-				changeContent();
-			}
-			var sharedata = [{type:'1',name:'太阳当空照',id:'7bVuYIwacOXU4jia'},
-			{type:'1',name:'蓝翔技校',id:'7bVuYIwacOXn2jia'},
-			{type:'1',name:'贝壳',id:'7bVuY8wa5OXU4jia'},
-			{type:'1',name:' 广场舞研究院',id:'7bVuYIoacOX57jia'},
-			{type:'1',name:' GGYY',id:'7bVuY8iacOX44jia'},
-			{type:'2',name:' 小飞机',id:'uiop0009'},
-			{type:'2',name:'离离原上草',id:'uiop0008'},
-			{type:'2',name:' 一岁一枯荣',id:'uiop0007'},
-			{type:'2',name:' 野火烧不尽',id:'uiop0006'},
-			{type:'2',name:' 春风吹又生',id:'uiop0005'},
-			{type:'2',name:' 野草',id:'uiop0004'}
-			];
-			
-			function changeContent(){
-				var htmltext1 = '';
-				var htmltext2 = '';
-				$.each(sharedata, function(n,obj){
-					if(obj.type == 1){
-						htmltext1 += '<label class="checkbox mycheckbox" for="'+obj.id+'"><input type="checkbox" id="'+obj.id+'" data-toggle="checkbox"><span class="checkName">'+obj.name+'</span></label> &nbsp; &nbsp; &nbsp; ';
-					}
-					else if(obj.type == 2){
-						htmltext2 += '<label class="checkbox mycheckbox" for="'+obj.id+'"><input type="checkbox" id="'+obj.id+'" data-toggle="checkbox"><span class="checkName">'+obj.name+'</span></label> &nbsp; &nbsp; ';
-					}
-				});
-				groupAim.html(htmltext1);
-				contactAim.html(htmltext2);
-				$('[data-toggle="checkbox"]').radiocheck();
 			}
 			
 			var defaultTail = '<div class="iconOption pull-left" id="userDefinedIcon"><img src="../pic/plus.png" class="iconOptionImg userDefinedImg"><br>自定义</div>';
-			function replaceSetting(THIS){//设置按钮请求数据
+			function replaceSetting(THIS){
 				//此处需补充请求数据方法
 				changeSettingContent();
 			}
