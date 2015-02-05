@@ -87,3 +87,42 @@
 	top: -4px;
 	margin-bottom: 0;
 }
+#addnewItem {
+	margin-top: 45px;
+	width: 223px;
+}
+.inputnameframe, .btn-newItem {
+	border-radius: 4px;
+	height: 27px;
+	font-size: 13px;
+}
+.inputnameframe {
+	border: #CCC 1px solid;
+	font-family: inherit;
+	width: 150px;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+	display: inline-block;
+	margin-right: -6px;
+}
+.btn-newItem {
+	background-color: #48c9b0;
+	color: #FFF;
+	padding: 1px 17px;
+	margin-top: 0px;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+	position: relative;
+	top: -1px;
+}
+.btn-newItem:hover {
+	background-color: #9cddd0;
+}
+.btn-newItem:active {
+	background-color: #1db396;
+}
+.creatTab {
+	position: relative;
+	margin-left: 8px;
+	top: -2px;
+}
