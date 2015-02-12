@@ -108,3 +108,16 @@
 	right: 5px;
 	bottom: 5px;
 }
+.editcheckbtn {
+	font-size: 40px;
+	cursor: pointer;
+	margin-left: 16px;
+	color: #60d692;
+}
+.editcheckbtn:active {
+	color: #a6eac3;
+}
+#editcheckbtngroup {
+	position: fixed;
+	right: 4%;
+}

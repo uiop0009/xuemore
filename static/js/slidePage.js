@@ -72,7 +72,7 @@
         },initSortable: function() {
             $("#" + c).sortable({containment: "#" + c,cursor: "move"}), this.disableSortable()
         },createUploader: function() {
-            var a = document.getElementById("fine-uploader"), c = document.getElementById("fileList"), d = new qq.FineUploader({element: a,request: {endpoint: "/slidePage"},validation: {allowedExtensions: ["png", "svg", "jpg", "ppt"],sizeLimit: 20971520},template: "qq-template-manual-noedit",autoUpload: !1,listElement: c,callbacks: {onAllComplete: function() {
+            var a = document.getElementById("fine-uploader"), c = document.getElementById("fileList"),z = document.getElementById("continueAddPage"), d = new qq.FineUploader({element: a,request: {endpoint: "/slidePage"},validation: {allowedExtensions: ["png", "svg", "jpg", "ppt"],sizeLimit: 20971520},template: "qq-template-manual-noedit",autoUpload: !1,listElement: c,callbacks: {onAllComplete: function() {
                         f.loadPages()
                     }}});
             d.setParams({slideId: b});
