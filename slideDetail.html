@@ -1,0 +1,343 @@
+<!doctype html>
+<html>
+<head>
+	<title data-l10n-id="home.serverName">连星</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="shortcut icon" href="/favicon.ico">
+    
+    <link href="static/bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="static/flat-ui-dist/css/flat-ui.min.css" rel="stylesheet">
+    
+    <link href="static/css/common-setting.css" rel="stylesheet">
+    <link href="static/css/insidePageSetting.css" rel="stylesheet">
+    <link href="static/css/detailPageSet.css" rel="stylesheet">
+    <link href="static/css/padDetail.css" rel="stylesheet">
+    <link href="static/css/slideDetail.css" rel="stylesheet">
+</head>
+
+<body>
+	<div id="header">
+    	<div class="container dispace-1">
+        	<span id="welcome">欢迎来到连星</span>&nbsp;&nbsp;
+            <span id="introduce">实时互动教学网站</span>
+            <div class="btn-group detailGroup pull-right userinfo">
+            	<a data-toggle="dropdown" href="#"><img src="pic/user.png"></a>
+                <ul role="menu" class="dropdown-menu userdropdown">
+                	<li><a href="#"><span class="fui-user"></span> uiop0009</a></li>
+                    <li><a href="#"><span class="fui-gear"></span> 账号设置</a></li>
+                    <li><a href="#"><span class="fui-exit"></span> 退出</a></li>
+                </ul>
+            </div>
+            <a class="pull-right notice" href="/user/messages" title="通知"><span class="glyphicon glyphicon-bullhorn"></span> <span id="noticeNum">&nbsp;&nbsp;</span></a>
+            
+        </div>   
+    </div>
+    <!--主菜单-->
+    <div class="drawShadow">
+    <div class="container dispace-1">
+    	<nav class="navbar navbar-defind" role="navigation">
+        	<div class="navbar-header">
+            	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainMenu"></button>
+                <a class="navbar-brand-defind" href="/user"><span class="glyphicon glyphicon-send" id="send"></span><span id="logotitle">连 星</span></a>
+            </div>
+            <div class="collapse navbar-collapse" id="mainMenu">
+            	<ul class="nav navbar-nav mainOption">
+                	<li><a class="grey" href="/user">&nbsp; 我 &nbsp;</a></li>
+                    <li><a class="grey" href="/user/contacts">联系人</a></li>
+                    <li><a class="grey" href="/user/userGroups">小组</a></li>
+                    <li><a class="grey" href="/user/pads">文档</a></li>
+                    <li class="active"><a class="grey" href="/user/slides">幻灯片</a></li>
+                </ul>
+                <form class="navbar-form navbar-right" id="searchform" action="#" role="search">
+                	<div class="form-group">
+                    	<div class="input-group">
+                        	<input class="form-control" id="searchBox" type="search" placeholder="用户/小组">
+                            <span class="input-group-btn">
+                            	<button type="submit" class="btn" id="searchBtn"><span class="fui-search"></span></button>
+                            </span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </nav>
+    </div>
+    </div>
+    
+    <div class="container dispace-2" id="contentArea">
+    	<p class="standard-title" id="slideDetailTitle">幻灯片详情</p>
+        <div class="row">
+            <div class="col-sm-4">
+            	<p class="ppttitle">幻灯片名： <span class="ppttitletext">电工技术讲义</span><input type="hidden" id="slideId" value="c7POTm2LeFBqvujO"></p>
+                <p class="remarktext">备注：电工技术初级课程第三章第二节讲义</p>
+            </div>
+            <div class="col-sm-8">
+                <div class="slideDetailBtnGroup pull-right">
+                	<button class="btn btn-primary slidedetailbtn" id="fine-uploader"><span class="fui-plus"></span> &nbsp; 添加页</button>
+                    <button class="btn btn-primary slidedetailbtn" id="editPages"><span class="fui-new"></span> &nbsp; 编 &nbsp; 辑</button>
+                	<button class="btn btn-primary slidedetailbtn" id="slidesetbtn"><span class="fui-gear"></span> &nbsp; 设 &nbsp; 置</button>
+                </div>
+            </div>
+        </div>
+        <div class="partContent">
+            <div id="pagesContainer" class="ui-sortable ui-sortable-disabled">
+				
+            </div>
+            <div id="emptyHint" style="display: none;">
+                <span data-l10n-id="home.empty">无</span>
+            </div>
+        </div>
+        
+    </div>
+    
+    
+    <div class="footer">
+    	<a href="#"><span class="glyphicon glyphicon-send"></span> 连星 @ Copyright by www.hepea.net</a>
+    </div>
+    <!--黑背景-->
+    <div id="blackBackground" class="hide">
+    </div>
+    <!--添加页弹窗-->
+    <div id="addsharewindow" class="addwindow">
+        <p class="standard-title windowtitle">添加页</p>
+        <div class="contentframe">
+        	<div class="row">
+        		<div class="col-sm-3 col-xs-5">
+            		<span class="boldtitle">幻灯片名：</span>
+            	</div>
+            	<div class="col-sm-9 col-xs-7">
+            		<span>电工技术讲义</span>
+            	</div>
+        	</div>
+            <div class="row">
+        		<div class="col-sm-3 col-xs-5">
+            		<span class="boldtitle">已添加页：</span>
+            	</div>
+            	<div class="col-sm-9 col-xs-7" id="DocShareList">
+            		
+            	</div>
+            </div>
+        </div>
+        <div id="closeaddshare" class="closebtn">
+            <span class="fui-cross"></span>
+        </div>
+        <div class="confirmBtn">
+        	<button type="button" class="btn btn-warning" id="addPage">继续添加</button> &nbsp;
+        	<button type="button" class="btn btn-primary" id="triggerUpload">上 &nbsp; &nbsp; &nbsp; 传</button>
+        </div>
+    </div>
+    <!--幻灯片设置弹窗-->
+    <div id="slideSetting" class="addwindow">
+    	<p class="standard-title windowtitle">幻灯片设置</p>
+        <div class="contentframe">
+        	<div class="row">
+        		<div class="col-sm-3 col-xs-5">
+            		<span class="boldtitle">幻灯片名：</span>
+            	</div>
+            	<div class="col-sm-9 col-xs-7">
+            		<input type="text" class="form-control" id="changeDocTitle" value="电工技术讲义">
+            	</div>
+        	</div>
+            <div class="row">
+        		<div class="col-sm-3 col-xs-5">
+            		<span class="boldtitle">幻灯片备注：</span>
+            	</div>
+            	<div class="col-sm-9 col-xs-7">
+            		<input type="text" class="form-control" id="changeDocRemark" value="电工技术初级课程第三章第二节讲义"><span id="remarkTextNum"></span><span class="conditiontext">(23字以内)</span>
+            	</div>
+        	</div>
+            <div class="row" id="IconSetArea">
+        		<div class="col-sm-3 col-xs-5">
+            		<span class="boldtitle">幻灯片图标：</span>
+            	</div>
+            	<div class="col-sm-9 col-xs-7" id="settingContent">
+            	</div>
+            </div>
+        </div>
+        <div id="closeSlideSetting" class="closebtn">
+            <span class="fui-cross"></span>
+        </div>
+        <button type="button" class="btn btn-primary confirmBtn" id="sharegroupbtn">保存设置</button>
+    </div>
+    
+    
+    <script type="text/javascript" src="static/js/promise.js"></script>
+	<script type="text/javascript" src="static/js/ajax.js"></script>
+    <script type="text/javascript" src="static/js/fineuploader.js"></script>
+	<script type="text/javascript" src="static/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="static/js/json2.js"></script>
+    <script type="text/javascript" src="static/flat-ui-dist/js/flat-ui.min.js"></script>
+    <script type="text/javascript" src="static/js/slidePage.js"></script>
+    <script type="text/javascript">
+		$(function(){
+			$('.input-group').on('focus', '.form-control', function () {
+      				$(this).closest('.input-group, .form-group').addClass('focus');
+    			}).on('blur', '.form-control', function () {
+      				$(this).closest('.input-group, .form-group').removeClass('focus');
+    		});
+			
+			$('.detailGroup').each(function(index, element) {
+                    $(this).hover(function(){
+							clearTimeout(window['t'+index]);
+							$(this).addClass('open');
+						},function(){
+							var $this = $(this);
+							window['t'+ index]=setTimeout(function(){$this.removeClass('open');},200);
+					});
+            });
+			
+			var pagesContainer = $('#pagesContainer');
+			var blackBack = $('#blackBackground');
+			var data = [{imgurl: 'pic/pptcontent/幻灯片1.JPG',pageid:'nfZyMDT3-1.png',active:'1'},
+			{imgurl: 'pic/pptcontent/幻灯片2.JPG',pageid:'nfZyMDT3-1.png'},
+			{imgurl: 'pic/pptcontent/幻灯片3.JPG',pageid:'nfZyMDT3-1.png'},
+			{imgurl: 'pic/pptcontent/幻灯片4.JPG',pageid:'nfZyMDT3-1.png'},
+			{imgurl: 'pic/pptcontent/幻灯片5.JPG',pageid:'nfZyMDT3-1.png'},
+			{imgurl: 'pic/pptcontent/幻灯片6.JPG',pageid:'nfZyMDT3-1.png'},
+			{imgurl: 'pic/pptcontent/幻灯片7.JPG',pageid:'nfZyMDT3-1.png'},
+			{imgurl: 'pic/pptcontent/幻灯片8.JPG',pageid:'nfZyMDT3-1.png'},
+			{imgurl: 'pic/pptcontent/幻灯片9.JPG',pageid:'nfZyMDT3-1.png'},
+			];
+			
+			function resizeWindow(){
+				if($(window).width() >= 1183){
+					pagesContainer.html('<div class="cellContent celldis"></div><div class="cellContent celldis"></div><div class="cellContent"></div><div class="cellContent pull-right"></div>');
+					var dis = Math.floor((pagesContainer.width()-228*4)/3);
+					$('.celldis').css('margin-right',dis+'px');
+				}
+				else if($(window).width() >= 975) {
+					pagesContainer.html('<div class="cellContent celldis"></div><div class="cellContent"></div><div class="cellContent pull-right"></div>');
+					var dis = Math.floor((pagesContainer.width()-228*3)/2);
+					$('.celldis').css('margin-right',dis+'px');
+				}
+				else if($(window).width() >= 554) {
+					pagesContainer.html('<div class="cellContent"></div><div class="cellContent pull-right"></div>');
+				}
+				else {
+					pagesContainer.html('<div class="cellContent"></div>');
+				}
+				contactsShow();
+			}
+			resizeWindow();
+			$(window).resize(resizeWindow);
+			
+			function contactsShow(){ //页面展示刷新
+				var cellContent = $('.cellContent');
+				var cyclength = cellContent.length;
+				var cycid = 0;
+				cellContent.each(function(){
+					$(this).html('');
+				});
+				$.each(data,function(n,value){
+					var htmltext = $(cellContent[cycid]).html();
+					var id = n+1;
+					if(!value.active) {
+						htmltext += '<div class="itemBlock ui-sortable-handle" pageid="'+value.pageid+'"><span class="serialNum">'+id+'</span><span class="fui-cross deletePage hide"></span><img src="'+value.imgurl+'" class="pptPageItem"><img src="pic/xuanzhong.png" class="coverSelected hide"></div>';
+					}
+					else {
+						htmltext += '<div class="itemBlock ui-sortable-handle" pageid="'+value.pageid+'"><span class="serialNum">'+id+'</span><span class="fui-cross deletePage hide"></span><img src="'+value.imgurl+'" class="pptPageItem"><img src="pic/xuanzhong.png" class="coverSelected"></div>'
+					}
+					
+					$(cellContent[cycid]).html(htmltext);
+					if(++cycid >= cyclength){
+						cycid = 0;
+					}
+				});
+				backHeight();
+			}
+			
+			
+			var addsharewindow = $('#addsharewindow');
+			var fineUploader = $('#fine-uploader');
+			var closeaddshare = $('#closeaddshare');
+			var sharedocbtn = $('#sharedocbtn');
+			var DocShareList = $('#DocShareList');
+			var slideSetting = $('#slideSetting');
+			var slidesetbtn = $('#slidesetbtn');
+			var closeSlideSetting = $('#closeSlideSetting');
+			var settingContent = $('#settingContent');
+			
+			var remarkTextNum = $('#remarkTextNum');
+			var changeDocRemark = $('#changeDocRemark');
+			
+			function backHeight(){
+				blackBack.css('height',$(document.body).height());
+			}
+			
+			var lastActive;
+			var newActive;
+			function newWindowInit(){
+				fineUploader.click(function(){
+					backHeight();
+					blackBack.removeClass('hide');
+					
+					addsharewindow.css({'transform':'scale(1,1)'});
+				});
+                slidesetbtn.click(function(){
+					backHeight();
+					blackBack.removeClass('hide');
+					var THIS = this;
+					replaceSetting(THIS);
+					slideSetting.css({'transform':'scale(1,1)'});
+				});
+				closeaddshare.click(closewindow);
+				closeSlideSetting.click(closewindow);
+				blackBack.click(closewindow);
+			}
+			newWindowInit();
+			function closewindow(){
+				blackBack.addClass('hide');
+				addsharewindow.css({'transform':'scale(0,0)'});
+				slideSetting.css({'transform':'scale(0,0)'});
+			}
+			
+			
+			function replaceSetting(THIS){//设置按钮请求数据
+				
+				changeSettingContent();
+			}
+			
+			function changeSettingContent(){
+				remarkTextNum.html(changeDocRemark.val().length);
+				changeDocRemark.keyup(function(){
+					var num = changeDocRemark.val().length;
+					remarkTextNum.html(num);
+					if(num>23){
+						remarkTextNum.css('color','#cf0000');
+					}
+					else {
+						remarkTextNum.css('color','#00cf70');
+					}
+				});
+				var htmltext = '';
+				var activeID = 0;
+				$.each(data,function(n,obj){
+					htmltext += '<div class="iconOption pptIconOption pull-left iconOptionMember"><span class="fui-check-circle activeIcon pptActiveIcon hide"></span><img src="'+obj.imgurl+'" class="iconOptionImg pptImg"></div>';
+					if(obj.active){
+						activeID = n;
+					}
+				});
+				settingContent.html(htmltext);
+				
+				var iconOptMer = $('.iconOptionMember');
+				iconOptMer.each(function(index, element) {
+                    var This = $(this);
+					This.click(function(){
+						if(This != newActive) {
+							This.addClass('iconActive');
+							This.children('.activeIcon').removeClass('hide');
+							lastActive = newActive;
+							newActive = This;
+							if(lastActive){
+								lastActive.removeClass('iconActive');
+								lastActive.children('.activeIcon').addClass('hide');
+							}
+						}
+					});
+                });
+				iconOptMer[activeID].click();
+			}
+		});
+	</script>
+</body>
+</html>

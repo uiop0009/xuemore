@@ -1,0 +1,110 @@
+@charset "utf-8";
+/* CSS Document */
+
+#slideDetailTitle {
+	margin-bottom: 12px;
+}
+.slidedetailbtn {
+	padding: 4px 12px;
+	font-size: 14px;
+	border-radius: 3px;
+}
+.ppttitle {
+	font-size: 16px;
+	font-weight: bold;
+	margin-bottom: 0;
+	color: #737373;
+}
+.ppttitletext {
+	font-weight: 100;
+	display: inline-block;
+	margin-left: 18px;
+	color: #333;
+}
+.remarktext {
+	font-size: 14px;
+	color: #999;
+	margin-bottom: 0;
+}
+.slideDetailBtnGroup {
+	margin-top: 14px;
+}
+.partContent {
+	margin-top: 20px;
+}
+.cellContent {
+	width: 228px;
+	float: left;
+}
+.itemBlock {
+	margin-bottom: 25px;
+	position: relative;
+}
+.serialNum {
+	position: absolute;
+	width: 42px;
+	height: 17px;
+	background-color: #dcdcdc;
+	font-size: 14px;
+	color: #FFF;
+	line-height: 17px;
+	text-align: center;
+	margin-top: 10px;
+}
+.pptPageItem {
+	width: 228px;
+}
+.deletePage {
+	position: absolute;
+	margin-left: 203px;
+	color: #999;
+	cursor: pointer;
+}
+.deletePage:hover {
+	color: #4acbb5;
+}
+.deletePage:active {
+	color: #CCC;
+}
+.coverSelected {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+.confirmBtn>button {
+	padding-left: 22px;
+	padding-right: 22px;
+}
+#triggerUpload {
+	padding-left: 30px;
+	padding-right: 30px;
+}
+#changeDocRemark {
+	width: 100%;
+	height: 24px;
+	border-width: 1px;
+	border-radius: 4px;
+	font-size: 14px;
+	font-family: inherit;
+}
+.conditiontext {
+	font-size: 13px;
+	color: #999;
+}
+#remarkTextNum {
+	color: #00cf70;
+	position: absolute;
+	margin-top: -24px;
+	right: 24px;
+}
+.pptIconOption {
+	margin-bottom: 16px;
+	position: relative;
+}
+.pptImg {
+	width: 120px;
+}
+.pptActiveIcon {
+	right: 5px;
+	bottom: 5px;
+}
