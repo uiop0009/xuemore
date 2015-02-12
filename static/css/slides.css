@@ -1,0 +1,29 @@
+@charset "utf-8";
+/* CSS Document */
+
+#inputnewItem {
+	padding: 1px 10px;
+}
+.cellContent {
+	width: 171px;
+	float: left;
+}
+.cellContent img {
+	padding: 5px;
+	border: #e6e6e6 solid 1px;
+}
+.pptlist {
+	min-height: 220px;
+}
+.smallertitle {
+	font-size: 15px;
+	margin-top: 2px;
+}
+.smallerpro {
+	font-size: 13px;
+	line-height: 1.3;
+	margin-top: 4px;
+}
+#contactsArea {
+	margin-top: 5px;
+}

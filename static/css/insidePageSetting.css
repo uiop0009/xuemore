@@ -65,15 +65,15 @@
 }
 #header {
 	background-color: #737373;
-	line-height: 40px;
+	line-height: 38px;
 }
 .navbar-defind {
 	margin-bottom: 0;
-	min-height: 60px;
+	min-height: 58px;
 }
 .navbar-brand-defind {
 	float: left;
-	line-height: 60px;
+	line-height: 58px;
 	margin-right: 40px;
 	font-size: 23px;
 	color: #737373;
@@ -87,7 +87,7 @@
 	margin-left: 54px;
 }
 .mainOption>li>a {
-	line-height: 60px;
+	line-height: 58px;
 	padding: 0 21px;
 	font-size: 18px;
 	font-weight: 100;
@@ -99,7 +99,7 @@ li.active>a {
 	color: #FFF;
 }
 #searchform {
-	padding: 12px 0;
+	padding: 11px 0;
 }
 #searchBox, #searchBtn {
 	border-radius: 20px;

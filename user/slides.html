@@ -12,7 +12,7 @@
     <link href="../static/css/insidePageSetting.css" rel="stylesheet">
     <link href="../static/css/subfieldLayout.css" rel="stylesheet">
     <link href="../static/css/padDetail.css" rel="stylesheet">
-    <link href="../static/css/userGroups.css" rel="stylesheet">
+    <link href="../static/css/slides.css" rel="stylesheet">
 </head>
 
 <body>
@@ -44,9 +44,9 @@
             	<ul class="nav navbar-nav mainOption">
                 	<li><a class="grey" href="/user">&nbsp; 我 &nbsp;</a></li>
                     <li><a class="grey" href="/user/contacts">联系人</a></li>
-                    <li class="active"><a class="grey" href="/user/userGroups">小组</a></li>
+                    <li><a class="grey" href="/user/userGroups">小组</a></li>
                     <li><a class="grey" href="/user/pads">文档</a></li>
-                    <li><a class="grey" href="/user/slides">幻灯片</a></li>
+                    <li class="active"><a class="grey" href="/user/slides">幻灯片</a></li>
                 </ul>
                 <form class="navbar-form navbar-right" id="searchform" action="#" role="search">
                 	<div class="form-group">
@@ -66,12 +66,12 @@
     <div class="container dispace-2">
     	<div class="row">
         	<div class="col-sm-8 col-xs-7">
-    			<p class="standard-title">我的组(<span id="groupsNum">0</span>)</p>
+    			<p class="standard-title">我的幻灯片(<span id="slidersNum">0</span>)</p>
             </div>
             <div class="col-sm-4 col-xs-5">
             	<div class="pull-right" id="addnewItem">
-                	<input type="text" placeholder="组名" class="form-control inputnameframe" id="inputItemTitle">
-                    <button class="btn btn-newItem" type="button" id="inputnewItem">创建组</button>
+                	<input type="text" placeholder="幻灯片名" class="form-control inputnameframe" id="inputItemTitle">
+                    <button class="btn btn-newItem" type="button" id="inputnewItem">新幻灯片</button>
                 </div>
             </div>
         </div>
@@ -93,35 +93,7 @@
     	<a href="#"><span class="glyphicon glyphicon-send"></span> 连星 @ Copyright by www.hepea.net</a>
     </div>
     
-    <!--黑背景-->
-    <div id="blackBackground" class="hide">
-    </div>
-    <!--创建组弹窗-->
-    <div id="docSetting" class="addwindow">
-    	<p class="standard-title windowtitle">创建新组</p>
-        <div class="contentframe">
-        	<div class="row">
-        		<div class="col-sm-3 col-xs-5">
-            		<span class="boldtitle">组名：</span>
-            	</div>
-            	<div class="col-sm-9 col-xs-7">
-            		<input type="text" class="form-control" id="changeDocTitle">
-            	</div>
-        	</div>
-            <div class="row" id="IconSetArea">
-        		<div class="col-sm-3 col-xs-5">
-            		<span class="boldtitle">组图标：</span>
-            	</div>
-            	<div class="col-sm-9 col-xs-7" id="settingContent">
-            	</div>
-            </div>
-        </div>
-        <div id="closeDocSetting" class="closebtn">
-            <span class="fui-cross"></span>
-        </div>
-        <button type="button" class="btn btn-primary confirmBtn" id="sharegroupbtn">创建组</button>
-    </div>
-            
+     
     
     <script type="text/javascript" src="../static/js/promise.js"></script>
 	<script type="text/javascript" src="../static/js/ajax.js"></script>
@@ -151,35 +123,39 @@
 			var lastclick = ' ';
 			var curclick = ' ';
 			var curN = 1; //当前播放的分页
-			var blackBack = $('#blackBackground');
-			var data = [8,
-			{imgurl: '../pic/lanxiang.png',groupid:'7bVuYIwacOXU4jia',groupname:'蓝翔技校',doc:'xiaofeiji',docid:'vbCqAP7IQQxI5OJH',creator:'1'},
-			{imgurl: '../pic/guangchangwu.png',groupid:'7bVuYIwacOXU4jia',groupname:'广场舞研究院',doc:'小苹果',docid:'vbCqAP7IQQxI5OJH'},
-			{groupid:'7bVuYIwacOXU4jia',groupname:'编程爱好者',doc:'java进阶高级...',docid:'vbCqAP7IQQxI5OJH'},
-			{groupid:'7bVuYIwacOXU4jia',groupname:'钢琴大师班',doc:'钢琴八级考试...',docid:'vbCqAP7IQQxI5OJH'},
-			{imgurl: '../pic/zuojiaxiehui.png',groupid:'7bVuYIwacOXU4jia',groupname:'作家协会',doc:'现代写作导论',docid:'vbCqAP7IQQxI5OJH',creator:'1'},
-			{groupid:'7bVuYIwacOXU4jia',groupname:'设计家',doc:'扁平化设计风...',docid:'vbCqAP7IQQxI5OJH'},
-			{imgurl: '../pic/chuyi.png',groupid:'7bVuYIwacOXU4jia',groupname:'厨艺坊',doc:'淮扬菜系推广',docid:'vbCqAP7IQQxI5OJH'},
-			{groupid:'7bVuYIwacOXU4jia',groupname:'剪刀石头布',doc:'猜拳胜率分析',docid:'vbCqAP7IQQxI5OJH'}
+			var data = [7,
+			{imgurl: '../pic/pptcover/pptcover1.jpg',slideid:'c7POTm2LeFBqvujO',slidename:'电工技术讲义',remark:'无'},
+			{imgurl: '../pic/pptcover/pptcover2.jpg',slideid:'c7POTm2LeFBqvujO',slidename:'舞台艺术概论',remark:'舞台艺术课程第一章讲义'},
+			{imgurl: '../pic/pptcover/pptcover3.jpg',slideid:'c7POTm2LeFBqvujO',slidename:'春日养生',remark:'养生技艺之节气养生教案'},
+			{imgurl: '../pic/pptcover/pptcover4.jpg',slideid:'c7POTm2LeFBqvujO',slidename:'送礼的艺术',remark:'礼品选择的技巧课程讲义'},
+			{imgurl: '../pic/pptcover/pptcover5.jpg',slideid:'c7POTm2LeFBqvujO',slidename:'PPT制作工具',remark:'PPT制作课程第二章第三节'},
+			{imgurl: '../pic/pptcover/pptcover6.jpg',slideid:'c7POTm2LeFBqvujO',slidename:'钢笔书法技巧',remark:'书法课程之钢笔书法讲义'},
+			{imgurl: '../pic/pptcover/pptcover7.jpg',slideid:'c7POTm2LeFBqvujO',slidename:'农业技术大全',remark:'农业科普知识讲义'}
 			];
 			
 			var datalength = data.length;
-			$('#groupsNum').html(data[0]);
+			$('#slidersNum').html(data[0]);
 			
 			paging();
 			
 			function resizeWindow(){
 				if($(window).width() >= 975){
-					contactsArea.html('<div class="cell3-left"><div class="cellContent"></div></div><div class="cell3-middle"><div class="cellContent"></div></div><div class="cell3-right"><div class="cellContent"></div></div>');
+					contactsArea.html('<div class="cellContent celldis"></div><div class="cellContent celldis"></div><div class="cellContent"></div><div class="cellContent pull-right"></div>');
+					var dis = Math.floor((contactsArea.width()-171*4)/3);
+					$('.celldis').css('margin-right',dis+'px');
 				}
-				else if($(window).width() >= 570) {
-					contactsArea.html('<div class="cell2-left"><div class="cellContent"></div></div><div class="cell2-right"><div class="cellContent"></div></div>');
+				else if($(window).width() >= 620) {
+					contactsArea.html('<div class="cellContent celldis"></div><div class="cellContent"></div><div class="cellContent pull-right"></div>');
+					var dis = Math.floor((contactsArea.width()-171*3)/2);
+					$('.celldis').css('margin-right',dis+'px');
+				}
+				else if($(window).width() >= 416) {
+					contactsArea.html('<div class="cellContent"></div><div class="cellContent pull-right"></div>');
 				}
 				else {
-					contactsArea.html('<div class="cell1"><div class="cellContent"></div></div>');
+					contactsArea.html('<div class="cellContent"></div>');
 				}
 				contactsShow();
-				blackBack.css('height',$(document.body).height());
 			}
 			resizeWindow();
 			$(window).resize(resizeWindow);
@@ -187,7 +163,7 @@
 			
 			function paging(){//分页
 				var contactnum = datalength-1;
-				var pagenum = Math.ceil(contactnum/24);
+				var pagenum = Math.ceil(contactnum/12);
 				var htmltext = '';
 				for(n = 1; n <= pagenum; n++){
 					htmltext += '<a id="pagebtn'+n+'"></a>';
@@ -238,94 +214,17 @@
 				});
 				$.each(arr,function(n,value){
 					var imgurl = data[value].imgurl;
-					if(!imgurl){
-						imgurl = '../pic/groupdefaultpic.png';
-					}
 					var htmltext = $(cellContent[cycid]).html();
 					
-					if(data[value].creator) {
-						htmltext += '<div groupid="'+data[value].groupid+'" class="listItem"><img src="'+imgurl+'" class="itempic pull-left"><p class="itemTitle">'+data[value].groupname+'<img src="../pic/groupCreatorTab.png" class="creatTab"></p><p class="profile">最新添加文档：<a href="/userGroup/'+data[value].docid+'" target="_blank">'+data[value].doc+'</p></div>';
-					}
-					else {
-						htmltext += '<div groupid="'+data[value].groupid+'" class="listItem"><img src="'+imgurl+'" class="itempic pull-left"><p class="itemTitle">'+data[value].groupname+'</p><p class="profile">最新添加文档：<a href="/userGroup/'+data[value].docid+'" target="_blank">'+data[value].doc+'</p></div>';
-					}
+					htmltext += '<div class="pptlist"><a href="/slide/'+data[value].slideid+'" target="_blank"><img src="'+data[value].imgurl+'"><p class="itemTitle smallertitle">'+data[value].slidename+'</p></a><p class="profile smallerpro">备注：'+data[value].remark+'</p></div>';
+					
 					$(cellContent[cycid]).html(htmltext);
 					if(++cycid >= cyclength){
 						cycid = 0;
 					}
 				});
-				addhref();
-			}
-			function addhref(){//附上链接
-				$('.listItem').each(function(index, element) {
-                    var This = $(this);
-					This.children('.itemTitle').click(function(){
-						var target = '/padDetail/'+This.attr('groupid');
-						window.open(target);
-					});
-                });
 			}
 			
-			
-			var inputnewItem = $('#inputnewItem');
-			var inputItemTitle = $('#inputItemTitle');
-			var docSetting = $('#docSetting');
-			var changeDocTitle = $('#changeDocTitle');
-			var closeDocSetting = $('#closeDocSetting');
-			var settingContent = $('#settingContent');
-			var lastActive;
-			var newActive;
-			
-			function newWindowInit(){
-				inputnewItem.click(function(){
-					blackBack.removeClass('hide');
-					var THIS = this;
-					replaceSetting(THIS);
-					docSetting.css({'transform':'scale(1,1)'});
-				});
-				closeDocSetting.click(closewindow);
-				blackBack.click(closewindow);
-			}
-			newWindowInit();
-			function closewindow(){
-				blackBack.addClass('hide');
-				docSetting.css({'transform':'scale(0,0)'});
-			}
-			
-			var defaultTail = '<div class="iconOption pull-left" id="userDefinedIcon"><img src="../pic/plus.png" class="iconOptionImg userDefinedImg"><br>自定义</div>';
-			function replaceSetting(THIS){
-				//此处需补充请求数据方法
-				changeSettingContent();
-			}
-			var setdata = [{id:'默认图标',url:'../pic/groupdefaultlg.png'},{id:'自定义图标1',url:'../pic/luxun.png'},{id:'自定义图标2',url:'../pic/pugongying.png'}];
-			
-			function changeSettingContent(){
-				changeDocTitle.val(inputItemTitle.val());
-				var htmltext = '';
-				$.each(setdata,function(n,obj){
-					htmltext += '<div class="iconOption pull-left iconOptionMember"><span class="fui-check-circle activeIcon hide"></span><img src="'+obj.url+'" class="iconOptionImg"><br>'+obj.id+'</div>';
-				});
-				htmltext += defaultTail;
-				settingContent.html(htmltext);
-				
-				var iconOptMer = $('.iconOptionMember');
-				iconOptMer.each(function(index, element) {
-                    var This = $(this);
-					This.click(function(){
-						if(This != newActive) {
-							This.addClass('iconActive');
-							This.children('.activeIcon').removeClass('hide');
-							lastActive = newActive;
-							newActive = This;
-							if(lastActive){
-								lastActive.removeClass('iconActive');
-								lastActive.children('.activeIcon').addClass('hide');
-							}
-						}
-					});
-                });
-				iconOptMer[0].click();
-			}
 			
 		});
 	</script>
