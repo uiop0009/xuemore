@@ -38,6 +38,7 @@
 }
 .itemBlock {
 	margin-bottom: 25px;
+	float: left;
 	position: relative;
 }
 .serialNum {
@@ -120,4 +121,11 @@
 #editcheckbtngroup {
 	position: fixed;
 	right: 4%;
+	top: 50%;
+}
+.qq-upload-cancel {
+	margin-left: 18px;
+}
+.qq-upload-list {
+	margin-left: -20px;
 }
