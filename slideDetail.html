@@ -211,6 +211,7 @@
 			
 			var pagesContainer = $('#pagesContainer');
 			var blackBack = $('#blackBackground');
+			var SDT = $('#slideDetailTitle');
 			var data = [{imgurl: 'pic/pptcontent/幻灯片1.JPG',pageid:'nfZyMDT3-1.png',active:'1'},
 			{imgurl: 'pic/pptcontent/幻灯片2.JPG',pageid:'nfZyMDT3-2.png'},
 			{imgurl: 'pic/pptcontent/幻灯片3.JPG',pageid:'nfZyMDT3-3.png'},
@@ -221,38 +222,38 @@
 			{imgurl: 'pic/pptcontent/幻灯片8.JPG',pageid:'nfZyMDT3-8.png'},
 			{imgurl: 'pic/pptcontent/幻灯片9.JPG',pageid:'nfZyMDT3-9.png'},
 			];
-			
+			contactsShow();
 			function resizeWindow(){
+				
 				if($(window).width() >= 1183){
-					pagesContainer.html('<div class="cellContent celldis"></div><div class="cellContent celldis"></div><div class="cellContent"></div><div class="cellContent pull-right"></div>');
-					var dis = Math.floor((pagesContainer.width()-228*4)/3);
-					$('.celldis').css('margin-right',dis+'px');
+					var dis = Math.floor((SDT.width()-228*4)/3);
+					changeWidth(dis);
+					
 				}
 				else if($(window).width() >= 975) {
-					pagesContainer.html('<div class="cellContent celldis"></div><div class="cellContent"></div><div class="cellContent pull-right"></div>');
-					var dis = Math.floor((pagesContainer.width()-228*3)/2);
-					$('.celldis').css('margin-right',dis+'px');
+					var dis = Math.floor((SDT.width()-228*3)/2);
+					changeWidth(dis);
 				}
 				else if($(window).width() >= 554) {
-					pagesContainer.html('<div class="cellContent"></div><div class="cellContent pull-right"></div>');
+					var dis = Math.floor(SDT.width()-228*2);
+					changeWidth(dis);
 				}
 				else {
-					pagesContainer.html('<div class="cellContent"></div>');
+					var dis = Math.floor(SDT.width()-228);
+					changeWidth(dis);
 				}
-				contactsShow();
 			}
 			resizeWindow();
 			$(window).resize(resizeWindow);
+			function changeWidth(dis){
+				pagesContainer.css('width',SDT.width()+dis);
+				pagesContainer.css('margin-left',-1*dis);
+				$('.itemBlock').css('margin-left',dis);
+			}
 			
 			function contactsShow(){ //页面展示刷新
-				var cellContent = $('.cellContent');
-				var cyclength = cellContent.length;
-				var cycid = 0;
-				cellContent.each(function(){
-					$(this).html('');
-				});
+				var htmltext = '';
 				$.each(data,function(n,value){
-					var htmltext = $(cellContent[cycid]).html();
 					var id = n+1;
 					if(!value.active) {
 						htmltext += '<div class="itemBlock slidePage ui-sortable-handle" pageid="'+value.pageid+'"><span class="serialNum">'+id+'</span><span class="fui-cross deletePage hide"></span><img src="'+value.imgurl+'" class="pptPageItem"><img src="pic/xuanzhong.png" class="coverSelected hide"></div>';
@@ -260,12 +261,8 @@
 					else {
 						htmltext += '<div class="itemBlock slidePage ui-sortable-handle" pageid="'+value.pageid+'"><span class="serialNum">'+id+'</span><span class="fui-cross deletePage hide"></span><img src="'+value.imgurl+'" class="pptPageItem"><img src="pic/xuanzhong.png" class="coverSelected"></div>'
 					}
-					
-					$(cellContent[cycid]).html(htmltext);
-					if(++cycid >= cyclength){
-						cycid = 0;
-					}
 				});
+				pagesContainer.html(htmltext);
 				backHeight();
 			}
 			
